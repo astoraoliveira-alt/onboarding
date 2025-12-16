@@ -1,0 +1,205 @@
+/* JourneyOverview.css */
+
+.journey-section {
+    position: relative;
+    padding: 80px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.journey-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.journey-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, #fff 0%, #a5a5a5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.journey-header p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Bento Grid Layout */
+.journey-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.journey-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    padding: 30px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 280px;
+}
+
+.journey-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Number Styling */
+.card-number {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.03);
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 0.4s ease;
+}
+
+.journey-card:hover .card-number {
+    color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1) rotate(-5deg);
+}
+
+/* Icon Box */
+.card-icon-box {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    transition: transform 0.3s ease;
+}
+
+.journey-card:hover .card-icon-box {
+    transform: scale(1.1);
+}
+
+/* Content */
+.journey-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.journey-card p {
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+/* Action Link */
+.card-action {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: gap 0.2s ease;
+}
+
+.journey-card:hover .card-action {
+    gap: 15px;
+}
+
+.arrow-icon {
+    transition: transform 0.2s ease;
+}
+
+.journey-card:hover .arrow-icon {
+    transform: translateX(5px);
+}
+
+/* Specific Colors for each card based on index/type */
+.color-security .card-icon-box {
+    background: rgba(244, 63, 94, 0.15);
+    color: #fb7185;
+}
+
+.color-security .card-action {
+    color: #fb7185;
+}
+
+.color-microsoft .card-icon-box {
+    background: rgba(56, 189, 248, 0.15);
+    color: #38bdf8;
+}
+
+.color-microsoft .card-action {
+    color: #38bdf8;
+}
+
+.color-mobile .card-icon-box {
+    background: rgba(168, 85, 247, 0.15);
+    color: #c084fc;
+}
+
+.color-mobile .card-action {
+    color: #c084fc;
+}
+
+.color-teams .card-icon-box {
+    background: rgba(99, 102, 241, 0.15);
+    color: #818cf8;
+}
+
+.color-teams .card-action {
+    color: #818cf8;
+}
+
+.color-design .card-icon-box {
+    background: rgba(236, 72, 153, 0.15);
+    color: #f472b6;
+}
+
+.color-design .card-action {
+    color: #f472b6;
+}
+
+.color-tools .card-icon-box {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+}
+
+.color-tools .card-action {
+    color: #4ade80;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .journey-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .journey-card {
+        min-height: auto;
+    }
+
+    .card-number {
+        font-size: 3rem;
+        top: 20px;
+        right: 20px;
+    }
+
+    .journey-header h2 {
+        font-size: 2rem;
+    }
+}

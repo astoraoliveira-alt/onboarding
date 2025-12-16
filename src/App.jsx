@@ -8,7 +8,7 @@ import TeamsManual from './components/TeamsManual';
 import OutlookSetup from './components/OutlookSetup';
 import ToolsAndSupport from './components/ToolsAndSupport';
 import DownloadsSection from './components/DownloadsSection';
-import InspirationalQuotes from './components/InspirationalQuotes';
+import JourneyOverview from './components/JourneyOverview';
 import Footer from './components/Footer';
 import './App.css';
 
@@ -28,7 +28,8 @@ function Section({ children, id }) {
     <section ref={ref} id={id} style={{
       transform: isInView ? "none" : "translateY(20px)",
       opacity: isInView ? 1 : 0,
-      transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+      transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+      scrollMarginTop: "100px" // Ajuda no scroll smooth
     }}>
       {children}
     </section>
@@ -61,30 +62,30 @@ function App() {
         {/* Other Sections */}
         <div className="container main-content">
           <Section>
-            <InspirationalQuotes />
+            <JourneyOverview />
           </Section>
 
-          <Section>
+          <Section id="security-section">
             <SecuritySection />
           </Section>
 
-          <Section>
+          <Section id="microsoft-section">
             <MicrosoftIntro />
           </Section>
 
-          <Section>
-            <TeamsManual />
-          </Section>
-
-          <Section>
+          <Section id="outlook-setup-section">
             <OutlookSetup />
           </Section>
 
-          <Section>
+          <Section id="teams-manual-section">
+            <TeamsManual />
+          </Section>
+
+          <Section id="downloads-section">
             <DownloadsSection />
           </Section>
 
-          <Section>
+          <Section id="tools-section">
             <ToolsAndSupport />
           </Section>
         </div>
