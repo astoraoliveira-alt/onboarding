@@ -6,20 +6,26 @@
 
 .tools-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(4, 1fr);
+    /* Force 4 columns */
+    gap: 15px;
+    /* Reduced gap */
     margin-top: 40px;
 }
 
 .tool-card {
-    padding: 30px;
+    padding: 20px;
+    /* Reduced padding */
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
+    /* Reduced gap */
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.05);
+    min-height: 220px;
+    /* Ensure uniform height */
 }
 
 .tool-card:hover {
@@ -34,13 +40,20 @@
 }
 
 .tool-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 12px;
+    width: 45px;
+    /* Smaller icon box */
+    height: 45px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 5px;
+}
+
+/* Adjust icon sizes inside cards via JS props ideally, but CSS scale works too */
+.tool-icon svg {
+    width: 24px;
+    height: 24px;
 }
 
 .tool-icon.support {
@@ -64,7 +77,8 @@
 }
 
 .tool-card h3 {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
+    /* Smaller title */
     font-weight: 600;
     color: #fff;
     margin: 0;
@@ -72,18 +86,21 @@
 
 .tool-card p {
     color: rgba(255, 255, 255, 0.7);
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 10px;
+    font-size: 0.85rem;
+    /* Smaller text */
+    line-height: 1.4;
+    margin-bottom: 5px;
+    flex: 1;
+    /* Push footer down */
 }
 
 /* Tool Info (Support) */
 .tool-info {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 0.9rem;
-    margin-top: 5px;
+    gap: 6px;
+    font-size: 0.8rem;
+    margin-top: 2px;
 }
 
 .tool-info .label {
@@ -98,6 +115,9 @@
 .tool-info .value.link {
     color: #00c6ff;
     text-decoration: none;
+    font-size: 0.75rem;
+    /* Smaller email font */
+    word-break: break-all;
 }
 
 .tool-info .value.link:hover {
@@ -109,32 +129,35 @@
     margin-top: auto;
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 12px 20px;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 10px 16px;
     background: rgba(255, 255, 255, 0.08);
-    border-radius: 8px;
+    border-radius: 6px;
     color: #fff;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.2s ease;
-    width: fit-content;
+    width: 100%;
+    /* Full width button */
+    font-size: 0.85rem;
 }
 
 .tool-btn:hover {
     background: rgba(255, 255, 255, 0.15);
-    transform: translateX(5px);
 }
 
 /* Payment Day Special Styling */
 .payment-day {
     display: flex;
     align-items: baseline;
-    gap: 8px;
-    margin-top: 10px;
+    gap: 6px;
+    margin-top: 5px;
 }
 
 .day-number {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
+    /* Smaller number */
     font-weight: 800;
     line-height: 1;
     background: linear-gradient(135deg, #7000ff, #00c6ff);
@@ -144,13 +167,22 @@
 }
 
 .day-label {
-    font-size: 1rem;
+    font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.6);
     font-weight: 500;
 }
 
-@media (max-width: 768px) {
+/* Responsive */
+@media (max-width: 1024px) {
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2x2 on tablets */
+    }
+}
+
+@media (max-width: 600px) {
     .tools-grid {
         grid-template-columns: 1fr;
+        /* Stack on mobile */
     }
 }
