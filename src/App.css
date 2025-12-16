@@ -1,0 +1,51 @@
+.app-container {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  background-color: #030014;
+  /* Deep dark bg */
+}
+
+/* Progress Bar */
+.progress-bar-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  transform-origin: 0%;
+  z-index: 100;
+  box-shadow: 0 0 10px rgba(0, 198, 255, 0.7);
+}
+
+.main-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  /* More breathing room */
+  padding-bottom: 50px;
+}
+
+.profile-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
+/* Section overrides for stricter spacing in V2 */
+.section-container {
+  margin-bottom: 0 !important;
+  /* Managed by flex gap */
+}
+
+/* Enhancing global typography for V2 */
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: -0.5px;
+}

@@ -1,0 +1,249 @@
+/* Hero.css */
+.hero-root {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #030014;
+    /* Deep blue background requested */
+    overflow: hidden;
+    user-select: none;
+    /* Prevent text selection dragging */
+}
+
+/* Canvas Container */
+.particle-canvas-container {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    cursor: crosshair;
+}
+
+.particle-canvas-element {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* UI Content Layer */
+.hero-ui-content {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    /* Let clicks pass through to canvas unless on button */
+    padding: 0 20px;
+    text-align: center;
+}
+
+.hero-badge {
+    margin-bottom: 2rem;
+}
+
+.hero-badge span {
+    padding: 6px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-family: monospace;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(4px);
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    letter-spacing: -2px;
+}
+
+.hero-highlight {
+    background: linear-gradient(to right, #ffffff, #a5b4fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-description {
+    max-width: 600px;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 300;
+    line-height: 1.6;
+    margin: 0 auto 3rem;
+}
+
+.hero-actions {
+    pointer-events: auto;
+    /* Re-enable clicks */
+}
+
+.hero-btn-primary {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 32px;
+    background: #ffffff;
+    color: #000000;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #3b82f6;
+    /* Blueish hover */
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-out;
+    opacity: 0.1;
+}
+
+.hero-btn-primary:hover::before {
+    transform: scaleX(1);
+}
+
+.hero-btn-primary:hover {
+    transform: scale(1.05);
+}
+
+.hero-btn-primary:active {
+    transform: scale(0.95);
+}
+
+/* Scroll Indicator */
+.scroll-indicator-wrapper {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.3);
+    animation: pulse 2s infinite;
+    pointer-events: none;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* Account Detection Card */
+.account-detection-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(112, 0, 255, 0.1);
+    border: 1px solid rgba(112, 0, 255, 0.3);
+    padding: 10px 20px;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(112, 0, 255, 0.2);
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.detection-icon {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.verified-dot {
+    width: 10px;
+    height: 10px;
+    background: #00c6ff;
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 0 0 10px #00c6ff;
+}
+
+.pulse-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #00c6ff;
+    border-radius: 50%;
+    animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+    opacity: 0.5;
+}
+
+@keyframes ping {
+
+    75%,
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+.detection-info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.detection-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.detection-value {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #fff;
+    font-family: monospace;
+}
+
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 6rem;
+    }
+}

@@ -1,0 +1,116 @@
+.microsoft-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.product-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.product-card h4 {
+    margin-bottom: 5px;
+}
+
+.product-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.onenote-feature {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    margin-top: 20px;
+    background: linear-gradient(135deg, rgba(119, 25, 170, 0.2), rgba(255, 255, 255, 0.03));
+    border: 1px solid rgba(119, 25, 170, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.onenote-feature .content {
+    flex: 1;
+    z-index: 2;
+}
+
+.badge-highlight {
+    background: #7719aa;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.onenote-feature h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.onenote-feature ul {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.onenote-feature li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    color: var(--text-muted);
+}
+
+.onenote-visual {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.floating-icon {
+    font-size: 80px;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, #7719aa, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: float 4s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+    .onenote-feature {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .onenote-feature li {
+        justify-content: center;
+    }
+}
