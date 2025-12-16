@@ -26,7 +26,10 @@ const DynamicHeader = () => {
         startDate: "10/01/2024",
         endDate: "30/12/2025",
         chargeability: 85,
+        goalExpected: 45, // % Esperado do semestre até o momento
+        goalAchieved: 48, // % Atingido real
         salary: "R$ 12.500,00",
+        paymentDay: "Dia 15",
         benefits: "Plano de Saúde Black, VA R$ 1.800",
         equipment: {
             brand: "Apple",
@@ -194,6 +197,21 @@ const DynamicHeader = () => {
                                                 <span className="text">Chargeability</span>
                                             </div>
                                         </div>
+                                        <div className="goals-stats">
+                                            <div className="info-row" style={{ justifyContent: 'space-between', fontSize: '0.9rem' }}>
+                                                <span className="label">Meta Semestral</span>
+                                            </div>
+                                            <div className="goal-bar-container">
+                                                {/* Expected Marker */}
+                                                <div className="goal-expected-marker" style={{ left: `${employee.goalExpected}%` }} title={`Esperado: ${employee.goalExpected}%`}></div>
+                                                {/* Achieved Bar */}
+                                                <div className="goal-achieved-bar" style={{ width: `${employee.goalAchieved}%` }}></div>
+                                            </div>
+                                            <div className="info-row" style={{ marginTop: '5px', fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', justifyContent: 'space-between' }}>
+                                                <span>Esperado: {employee.goalExpected}%</span>
+                                                <span style={{ color: '#22c55e' }}>Atingido: {employee.goalAchieved}%</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -214,6 +232,11 @@ const DynamicHeader = () => {
                                             <span className={`value money - ${showSensitive ? '' : 'blurred'}`}>
                                                 {employee.salary}
                                             </span>
+                                        </div>
+                                        <div className="separator"></div>
+                                        <div className="info-row">
+                                            <span className="label">Pagamento</span>
+                                            <span className="value">{employee.paymentDay}</span>
                                         </div>
                                         <div className="separator"></div>
                                         <div className="info-row">

@@ -389,6 +389,35 @@
     /* Override default margin */
 }
 
+/* Goals Bar */
+.goals-stats {
+    margin-top: 15px;
+    width: 100%;
+}
+
+.goal-bar-container {
+    background: rgba(255, 255, 255, 0.1);
+    height: 6px;
+    border-radius: 3px;
+    margin-top: 5px;
+    position: relative;
+}
+
+.goal-expected-marker {
+    position: absolute;
+    top: -4px;
+    bottom: -4px;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 1;
+}
+
+.goal-achieved-bar {
+    height: 100%;
+    background: #22c55e;
+    border-radius: 3px;
+}
+
 /* === Equipment Section === */
 .equipment-row {
     flex-direction: column;
