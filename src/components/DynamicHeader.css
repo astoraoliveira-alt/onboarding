@@ -463,3 +463,36 @@
     background: rgba(255, 255, 255, 0.1);
     margin: 5px 0;
 }
+
+/* Equipment Section Styles */
+.separator-line {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 12px 0;
+}
+
+.equipment-row .label-icon {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 4px;
+}
+
+.equipment-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.eq-name {
+    font-weight: 600;
+    color: #fff;
+    font-size: 0.95rem;
+}
+
+.eq-model {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+}

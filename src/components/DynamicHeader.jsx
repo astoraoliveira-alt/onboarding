@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
     User, Briefcase, Calendar, TrendingUp, DollarSign,
     Gift, ChevronDown, ChevronUp, Star, Activity, Eye, EyeOff, Layout,
-    Copy, Check, Mail
+    Copy, Check, Mail, Laptop
 } from 'lucide-react';
 import './DynamicHeader.css';
 
@@ -24,8 +24,19 @@ const DynamicHeader = () => {
         endDate: "30/12/2025",
         chargeability: 85,
         salary: "R$ 12.500,00",
-        benefits: "Plano de Saúde Black, VA R$ 1.800"
+        benefits: "Plano de Saúde Black, VA R$ 1.800",
+        equipment: {
+            brand: "Apple",
+            model: "MacBook Pro M3",
+            name: "Macbook Corp. 01"
+        }
     };
+
+    useEffect(() => {
+        const handleExpand = () => setIsExpanded(true);
+        window.addEventListener('expandHeader', handleExpand);
+        return () => window.removeEventListener('expandHeader', handleExpand);
+    }, []);
 
     const toggleExpand = () => setIsExpanded(!isExpanded);
 
@@ -110,6 +121,14 @@ const DynamicHeader = () => {
                                     <div className="info-row">
                                         <span className="label">Mentor</span>
                                         <span className="value">{employee.mentor}</span>
+                                    </div>
+                                    <div className="separator-line"></div>
+                                    <div className="info-row equipment-row">
+                                        <div className="label-icon"><Laptop size={14} /> Equipamento</div>
+                                        <div className="equipment-details">
+                                            <span className="eq-name">{employee.equipment.name}</span>
+                                            <span className="eq-model">{employee.equipment.brand} - {employee.equipment.model}</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

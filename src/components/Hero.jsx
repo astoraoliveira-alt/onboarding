@@ -334,11 +334,16 @@ const Hero = ({ employeeName, email }) => {
                 </h1>
 
                 <p className="hero-description">
-                    Sua jornada para o futuro começa agora. Explore o ambiente digital exclusivo que preparamos para você.
+                    Sua jornada para o futuro na Davos começa agora. Explore o ambiente digital exclusivo que preparamos para você.
                 </p>
 
                 <div className="hero-actions">
-                    <button className="hero-btn-primary group" onClick={() => document.getElementById('profile-card')?.scrollIntoView({ behavior: 'smooth' })}>
+                    <button className="hero-btn-primary group" onClick={() => {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        setTimeout(() => {
+                            window.dispatchEvent(new CustomEvent('expandHeader'));
+                        }, 500);
+                    }}>
                         <span className="relative z-10">Acessar Meu Painel</span>
                         <ArrowRight className="w-4 h-4 relative z-10 transition-transform group-hover:translate-x-1" />
                     </button>
