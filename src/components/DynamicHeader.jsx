@@ -95,7 +95,6 @@ const DynamicHeader = () => {
                 </button>
             </div>
 
-            {/* 2. Expanded Dashboard Panel */}
             <AnimatePresence>
                 {isExpanded && (
                     <motion.div
@@ -105,107 +104,109 @@ const DynamicHeader = () => {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.4, ease: [0.33, 1, 0.68, 1] }}
                     >
-                        <div className="dashboard-grid">
+                        <div className="dashboard-scroll-container">
+                            <div className="dashboard-grid">
 
-                            {/* Card: Project & Mentor */}
-                            <div className="dash-card">
-                                <div className="card-header">
-                                    <Layout size={18} className="card-icon blue" />
-                                    <h3>Contexto Atual</h3>
-                                </div>
-                                <div className="card-content">
-                                    <div className="info-row">
-                                        <span className="label">Projeto</span>
-                                        <span className="value strong">{employee.project}</span>
+                                {/* Card: Project & Mentor */}
+                                <div className="dash-card">
+                                    <div className="card-header">
+                                        <Layout size={18} className="card-icon blue" />
+                                        <h3>Contexto Atual</h3>
                                     </div>
-                                    <div className="info-row">
-                                        <span className="label">Mentor</span>
-                                        <span className="value">{employee.mentor}</span>
-                                    </div>
-                                    <div className="separator-line"></div>
-                                    <div className="info-row equipment-row">
-                                        <div className="label-icon"><Laptop size={14} /> Equipamento</div>
-                                        <div className="equipment-details">
-                                            <span className="eq-name">{employee.equipment.name}</span>
-                                            <span className="eq-model">{employee.equipment.brand} - {employee.equipment.model}</span>
+                                    <div className="card-content">
+                                        <div className="info-row">
+                                            <span className="label">Projeto</span>
+                                            <span className="value strong">{employee.project}</span>
+                                        </div>
+                                        <div className="info-row">
+                                            <span className="label">Mentor</span>
+                                            <span className="value">{employee.mentor}</span>
+                                        </div>
+                                        <div className="separator-line"></div>
+                                        <div className="info-row equipment-row">
+                                            <div className="label-icon"><Laptop size={14} /> Equipamento</div>
+                                            <div className="equipment-details">
+                                                <span className="eq-name">{employee.equipment.name}</span>
+                                                <span className="eq-model">{employee.equipment.brand} - {employee.equipment.model}</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+
+                                {/* Card: Timeline */}
+                                <div className="dash-card">
+                                    <div className="card-header">
+                                        <Calendar size={18} className="card-icon purple" />
+                                        <h3>Cronograma</h3>
+                                    </div>
+                                    <div className="card-content">
+                                        <div className="timeline-graphic">
+                                            <div className="time-point start">
+                                                <div className="dot filled"></div>
+                                                <span className="date">{employee.startDate}</span>
+                                                <span className="legend">Início</span>
+                                            </div>
+                                            <div className="time-line">
+                                                <div className="progress" style={{ width: '60%' }}></div>
+                                            </div>
+                                            <div className="time-point end">
+                                                <div className="dot"></div>
+                                                <span className="date">{employee.endDate}</span>
+                                                <span className="legend">Previsão</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Card: Performance */}
+                                <div className="dash-card">
+                                    <div className="card-header">
+                                        <TrendingUp size={18} className="card-icon green" />
+                                        <h3>Performance</h3>
+                                    </div>
+                                    <div className="card-content center-align">
+                                        <div className="circular-chart">
+                                            <svg viewBox="0 0 36 36" className="circular-chart-svg">
+                                                <path className="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                                <path className="circle-fill" strokeDasharray={`${employee.chargeability}, 100`} d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                            </svg>
+                                            <div className="percentage">
+                                                <span className="num">{employee.chargeability}%</span>
+                                                <span className="text">Chargeability</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Card: Sensitive Data (Salary/Benefits) */}
+                                <div className="dash-card sensitive-card">
+                                    <div className="card-header">
+                                        <div className="flex gap-2">
+                                            <DollarSign size={18} className="card-icon gold" />
+                                            <h3>Dados Financeiros</h3>
+                                        </div>
+                                        <button className="toggle-eye" onClick={() => setShowSensitive(!showSensitive)}>
+                                            {showSensitive ? <EyeOff size={16} /> : <Eye size={16} />}
+                                        </button>
+                                    </div>
+                                    <div className="card-content">
+                                        <div className="info-row">
+                                            <span className="label">Salário Base</span>
+                                            <span className={`value money - ${showSensitive ? '' : 'blurred'}`}>
+                                                {employee.salary}
+                                            </span>
+                                        </div>
+                                        <div className="separator"></div>
+                                        <div className="info-row">
+                                            <span className="label"><Gift size={12} style={{ display: 'inline', marginRight: 4 }} /> Benefícios</span>
+                                            <span className={`value benefits ${showSensitive ? '' : 'blurred'}`}>
+                                                {employee.benefits}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
-
-                            {/* Card: Timeline */}
-                            <div className="dash-card">
-                                <div className="card-header">
-                                    <Calendar size={18} className="card-icon purple" />
-                                    <h3>Cronograma</h3>
-                                </div>
-                                <div className="card-content">
-                                    <div className="timeline-graphic">
-                                        <div className="time-point start">
-                                            <div className="dot filled"></div>
-                                            <span className="date">{employee.startDate}</span>
-                                            <span className="legend">Início</span>
-                                        </div>
-                                        <div className="time-line">
-                                            <div className="progress" style={{ width: '60%' }}></div>
-                                        </div>
-                                        <div className="time-point end">
-                                            <div className="dot"></div>
-                                            <span className="date">{employee.endDate}</span>
-                                            <span className="legend">Previsão</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Card: Performance */}
-                            <div className="dash-card">
-                                <div className="card-header">
-                                    <TrendingUp size={18} className="card-icon green" />
-                                    <h3>Performance</h3>
-                                </div>
-                                <div className="card-content center-align">
-                                    <div className="circular-chart">
-                                        <svg viewBox="0 0 36 36" className="circular-chart-svg">
-                                            <path className="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                            <path className="circle-fill" strokeDasharray={`${employee.chargeability}, 100`} d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                                        </svg>
-                                        <div className="percentage">
-                                            <span className="num">{employee.chargeability}%</span>
-                                            <span className="text">Chargeability</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Card: Sensitive Data (Salary/Benefits) */}
-                            <div className="dash-card sensitive-card">
-                                <div className="card-header">
-                                    <div className="flex gap-2">
-                                        <DollarSign size={18} className="card-icon gold" />
-                                        <h3>Dados Financeiros</h3>
-                                    </div>
-                                    <button className="toggle-eye" onClick={() => setShowSensitive(!showSensitive)}>
-                                        {showSensitive ? <EyeOff size={16} /> : <Eye size={16} />}
-                                    </button>
-                                </div>
-                                <div className="card-content">
-                                    <div className="info-row">
-                                        <span className="label">Salário Base</span>
-                                        <span className={`value money - ${showSensitive ? '' : 'blurred'}`}>
-                                            {employee.salary}
-                                        </span>
-                                    </div>
-                                    <div className="separator"></div>
-                                    <div className="info-row">
-                                        <span className="label"><Gift size={12} style={{ display: 'inline', marginRight: 4 }} /> Benefícios</span>
-                                        <span className={`value benefits ${showSensitive ? '' : 'blurred'}`}>
-                                            {employee.benefits}
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                     </motion.div>
                 )}
