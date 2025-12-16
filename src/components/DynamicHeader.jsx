@@ -19,7 +19,10 @@ const DynamicHeader = () => {
         email: "ana.silva@davosbr.com",
         avatar: "https://i.pravatar.cc/150?u=a042581f4e29026704d", // Placeholder
         mentor: "Roberto Almeida",
-        project: "SaaS Financial Platform",
+        mentorRole: "Senior Manager",
+        mentorEmail: "roberto.almeida@davos.com",
+        client: "Banco Global S.A.",
+        project: "Plataforma SaaS Financeira",
         startDate: "10/01/2024",
         endDate: "30/12/2025",
         chargeability: 85,
@@ -107,7 +110,7 @@ const DynamicHeader = () => {
                         <div className="dashboard-scroll-container">
                             <div className="dashboard-grid">
 
-                                {/* Card: Project & Mentor */}
+                                {/* Card: Contexto Atual (Updated) */}
                                 <div className="dash-card">
                                     <div className="card-header">
                                         <Layout size={18} className="card-icon blue" />
@@ -115,12 +118,16 @@ const DynamicHeader = () => {
                                     </div>
                                     <div className="card-content">
                                         <div className="info-row">
-                                            <span className="label">Projeto</span>
-                                            <span className="value strong">{employee.project}</span>
+                                            <span className="label">Cargo</span>
+                                            <span className="value strong">{employee.role}</span>
                                         </div>
                                         <div className="info-row">
                                             <span className="label">Mentor</span>
-                                            <span className="value">{employee.mentor}</span>
+                                            <div className="mentor-info">
+                                                <span className="value">{employee.mentor}</span>
+                                                <span className="sub-value" style={{ color: 'rgba(255,255,255,0.5)' }}>{employee.mentorRole}</span>
+                                                <span className="sub-value" style={{ color: '#00c6ff', marginTop: '2px' }}>{employee.mentorEmail}</span>
+                                            </div>
                                         </div>
                                         <div className="separator-line"></div>
                                         <div className="info-row equipment-row">
@@ -133,13 +140,25 @@ const DynamicHeader = () => {
                                     </div>
                                 </div>
 
-                                {/* Card: Timeline */}
+                                {/* Card: Cronograma (Updated) */}
                                 <div className="dash-card">
                                     <div className="card-header">
                                         <Calendar size={18} className="card-icon purple" />
                                         <h3>Cronograma</h3>
                                     </div>
                                     <div className="card-content">
+                                        {/* Project Info Header */}
+                                        <div className="project-info-mini">
+                                            <div className="info-row">
+                                                <span className="label">Cliente</span>
+                                                <span className="value strong">{employee.client}</span>
+                                            </div>
+                                            <div className="info-row">
+                                                <span className="label">Projeto</span>
+                                                <span className="value">{employee.project}</span>
+                                            </div>
+                                        </div>
+
                                         <div className="timeline-graphic">
                                             <div className="time-point start">
                                                 <div className="dot filled"></div>
