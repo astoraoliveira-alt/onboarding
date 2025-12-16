@@ -15,7 +15,7 @@ const BusinessContext = () => {
                 <div className="mv-card">
                     <div className="mv-icon"><Target /></div>
                     <h3>Nossa Missão</h3>
-                    <p>Apoiar verdadeiramente nossos clientes a executar e gerir seus principais desafios de transformação.</p>
+                    <p>Ajudar empresas a evoluírem com clareza e direção, conectando estratégia, execução e tecnologia para resolver problemas complexos e transformar decisões em resultados concretos, de forma rápida, consistente e sustentável.</p>
                 </div>
                 <div className="mv-card">
                     <div className="mv-icon"><Eye /></div>

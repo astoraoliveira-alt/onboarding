@@ -7,43 +7,43 @@ const PHASES = [
     {
         id: '30days',
         label: 'Primeiros 30 Dias',
-        title: 'Imersão & Aprendizado',
+        title: 'Imersão & Postura Consultiva',
         icon: Rocket,
-        description: 'Foco total em absorver a cultura, entender as ferramentas e conhecer o time.',
+        description: 'Seu objetivo é absorver a cultura, entender o negócio do cliente e demonstrar organização impecável.',
         checklist: [
-            'Concluir todo o treinamento de ferramentas',
-            'Sessões de 1:1 com todos os membros da squad',
-            'Configurar ambiente de desenvolvimento completo',
-            'Entender profundamente o produto atual',
-            'Participar de todas as cerimônias ágeis como ouvinte ativo'
+            'Absorver a metodologia e cultura de excelência da Davos',
+            'Mapear stakeholders, dores e o cenário atual do cliente',
+            'Demonstrar disciplina: pontualidade, comunicação clara e escuta ativa',
+            'Entender a arquitetura tecnológica e os processos de negócio',
+            'Estabelecer conexões de confiança com o time e o cliente'
         ]
     },
     {
         id: '60days',
         label: '30 a 60 Dias',
-        title: 'Primeiras Entregas',
+        title: 'Execução & Geração de Valor',
         icon: Target,
-        description: 'Começar a contribuir ativamente com tarefas de baixa/média complexidade.',
+        description: 'Começar a resolver problemas reais, conectando tecnologia e negócio com qualidade superior.',
         checklist: [
-            'Entregar primeira feature em produção',
-            'Documentar um processo que você aprendeu',
-            'Realizar Code Reviews com supervisão',
-            'Propor uma melhoria pequena no workflow',
-            'Dominar o domínio de negócio do cliente'
+            'Realizar entregas consistentes com zero retrabalho',
+            'Traduzir necessidades de negócio em requisitos técnicos claros',
+            'Documentar processos e decisões para garantir clareza',
+            'Participar ativamente de rituais com inputs relevantes',
+            'Antecipar riscos operacionais antes que virem problemas'
         ]
     },
     {
         id: '90days',
         label: '90 Dias em diante',
-        title: 'Autonomia & Impacto',
+        title: 'Autonomia & Expansão',
         icon: Award,
-        description: 'Operar com autonomia total e começar a gerar valor mensurável.',
+        description: 'Tornar-se um "Trusted Advisor", liderando frentes e impulsionando a transformação.',
         checklist: [
-            'Liderar uma iniciativa técnica pequena',
-            'Ser referência em um módulo do sistema',
-            'Ajudar no onboarding de novos colegas',
-            'Atingir métricas de performance padrão',
-            'Participar ativamente de decisões de arquitetura'
+            'Operar com autonomia total na frente do cliente',
+            'Propor melhorias proativas na estratégia ou arquitetura',
+            'Liderar reuniões executivas ou técnicas com segurança',
+            'Apoiar o desenvolvimento de consultores menos experientes',
+            'Identificar novas oportunidades de geração de valor no cliente'
         ]
     }
 ];
