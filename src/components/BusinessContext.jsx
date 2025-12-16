@@ -71,38 +71,70 @@ const BusinessContext = () => {
             <div className="history-timeline">
                 <div className="timeline-track"></div>
                 <div className="timeline-events">
+
                     <div className="t-event">
-                        <span className="t-year">2018</span>
+                        <span className="t-year">1996 - 2003</span>
                         <div className="t-dot"></div>
                         <div className="t-content">
-                            <h4>Fundação</h4>
-                            <p>Início das operações em garagem com 3 sócios.</p>
+                            <h4>Fundação técnica</h4>
+                            <p>Experiências iniciais em tecnologia, engenharia de processos, software e projetos corporativos.</p>
                         </div>
                     </div>
+
                     <div className="t-event">
-                        <span className="t-year">2020</span>
+                        <span className="t-year">2004 - 2011</span>
                         <div className="t-dot"></div>
                         <div className="t-content">
-                            <h4>Expansão Digital</h4>
-                            <p>Crescimento de 300% durante a pandemia.</p>
+                            <h4>Consultoria Global</h4>
+                            <p>Atuação em grandes programas de transformação em bancos e seguradoras pela Accenture.</p>
                         </div>
                     </div>
+
                     <div className="t-event">
-                        <span className="t-year">2023</span>
+                        <span className="t-year">2011 - 2017</span>
                         <div className="t-dot"></div>
                         <div className="t-content">
-                            <h4>Internacionalização</h4>
-                            <p>Primeiros clientes nos EUA e Europa.</p>
+                            <h4>Transformação Digital</h4>
+                            <p>Liderança de práticas de consultoria na EY em analytics, automação e CX.</p>
                         </div>
                     </div>
+
                     <div className="t-event">
+                        <span className="t-year">2017 - 2019</span>
+                        <div className="t-dot"></div>
+                        <div className="t-content">
+                            <h4>IA & Experience</h4>
+                            <p>Condução de iniciativas de IA e transformação de canais na IBM.</p>
+                        </div>
+                    </div>
+
+                    <div className="t-event">
+                        <span className="t-year">2019 - 2024</span>
+                        <div className="t-dot"></div>
+                        <div className="t-content">
+                            <h4>Liderança Executiva</h4>
+                            <p>Posições executivas (Accenture, Minsait, FourD) liderando vendas e delivery.</p>
+                        </div>
+                    </div>
+
+                    <div className="t-event highlight">
                         <span className="t-year">2025</span>
                         <div className="t-dot"></div>
                         <div className="t-content">
-                            <h4>O Futuro</h4>
-                            <p>Liderança em IA Generativa para Enterprise.</p>
+                            <h4>Nascimento da DAVOS</h4>
+                            <p>Criação da empresa unindo décadas de experiência para entregar impacto real.</p>
                         </div>
                     </div>
+
+                    <div className="t-event highlight">
+                        <span className="t-year">2026</span>
+                        <div className="t-dot"></div>
+                        <div className="t-content">
+                            <h4>Consolidação</h4>
+                            <p>Foco em expansão, parcerias estratégicas e consolidação do modelo Davos.</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 

@@ -278,17 +278,22 @@
 
 .timeline-events {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    /* Permite scroll horizontal fluido */
     position: relative;
     z-index: 1;
     overflow-x: auto;
-    padding-bottom: 20px;
-    gap: 40px;
+    padding-bottom: 30px;
+    /* Espaço pro scrollbar */
+    gap: 50px;
+    /* Mais espaço entre eventos */
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .t-event {
-    flex: 1;
-    min-width: 200px;
+    flex: 0 0 280px;
+    /* Largura fixa maior para texto */
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -299,29 +304,62 @@
 .t-year {
     font-size: 1.5rem;
     font-weight: 800;
-    color: #00c6ff;
-    background: rgba(0, 0, 0, 0.5);
+    color: #4b5563;
+    /* Cinza para passado */
+    background: rgba(31, 41, 55, 0.5);
     padding: 5px 15px;
     border-radius: 20px;
-    border: 1px solid rgba(0, 198, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s;
 }
 
 .t-dot {
     width: 16px;
     height: 16px;
-    background: #00c6ff;
+    background: #4b5563;
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(0, 198, 255, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s;
 }
 
 .t-content h4 {
-    color: #fff;
+    color: #e5e7eb;
     margin-bottom: 5px;
+    font-size: 1.1rem;
 }
 
 .t-content p {
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.5);
+    line-height: 1.6;
+}
+
+/* DESTAQUE 2025/2026 */
+.t-event.highlight .t-year {
+    color: #fff;
+    background: #7000ff;
+    /* Davos Purple */
+    border-color: #7000ff;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(112, 0, 255, 0.5);
+}
+
+.t-event.highlight .t-dot {
+    background: #00c6ff;
+    /* Davos Blue */
+    width: 20px;
+    height: 20px;
+    box-shadow: 0 0 15px #00c6ff;
+    border: 2px solid #fff;
+}
+
+.t-event.highlight .t-content h4 {
+    color: #00c6ff;
+    font-weight: 700;
+}
+
+.t-event.highlight .t-content p {
+    color: rgba(255, 255, 255, 0.9);
 }
 
 /* Business Model */
@@ -367,6 +405,7 @@
 }
 
 /* === Role Expectations Styles === */
+/* ... Mantendo estilos anteriores ... */
 .tabs-container {
     display: flex;
     justify-content: center;
@@ -497,6 +536,8 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 30px;
+        overflow-x: hidden;
+        /* Remove scroll horizontal no mobile para virar lista */
     }
 
     .timeline-track {
@@ -509,14 +550,22 @@
     }
 
     .t-event {
+        flex: 1;
+        /* Volta ao normal vertical */
         flex-direction: row;
         text-align: left;
         padding-left: 50px;
+        min-width: auto;
     }
 
     .t-year {
         position: absolute;
         left: 0;
+        min-width: 80px;
+        /* Garante tamanho para ano */
+        text-align: center;
+        font-size: 0.8rem;
+        padding: 4px 8px;
     }
 
     .t-dot {
