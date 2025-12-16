@@ -2,12 +2,13 @@
 .hero-root {
     position: relative;
     width: 100%;
-    height: 100vh;
-    background-color: #030014;
-    /* Deep blue background requested */
+    min-height: 100vh;
+    /* Deep blue background implicit from body, but we ensure it covers */
+    /* background-color: #030014; handled by index.css but safe to keep */
     overflow: hidden;
     user-select: none;
-    /* Prevent text selection dragging */
+    display: flex;
+    align-items: center;
 }
 
 /* Canvas Container */
@@ -24,23 +25,53 @@
     height: 100%;
 }
 
-/* UI Content Layer */
+/* UI Content Layer - New Grid Layout */
 .hero-ui-content {
-    position: absolute;
-    inset: 0;
+    position: relative;
     z-index: 10;
+    width: 100%;
+    pointer-events: none;
+    /* Let clicks pass unless on interactive elements */
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
+    align-items: center;
+    padding-top: 60px;
+    /* Offset for Header */
+}
+
+@media (max-width: 968px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 60px;
+    }
+
+    .hero-text-column {
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .hero-card-column {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* --- Left Column: Inspiration --- */
+.hero-text-column {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    pointer-events: none;
-    /* Let clicks pass through to canvas unless on button */
-    padding: 0 20px;
-    text-align: center;
+    align-items: flex-start;
+    gap: 20px;
+    pointer-events: auto;
 }
 
 .hero-badge {
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
 }
 
 .hero-badge span {
@@ -49,19 +80,19 @@
     border-radius: 50px;
     font-size: 0.8rem;
     font-family: monospace;
-    color: rgba(255, 255, 255, 0.7);
+    color: #00c6ff;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(0, 198, 255, 0.1);
     backdrop-filter: blur(4px);
+    box-shadow: 0 0 15px rgba(0, 198, 255, 0.2);
 }
 
 .hero-title {
-    font-size: 4rem;
+    font-size: 4.5rem;
     font-weight: 800;
-    line-height: 1.1;
+    line-height: 1;
     color: #ffffff;
-    margin-bottom: 1.5rem;
     letter-spacing: -2px;
 }
 
@@ -73,65 +104,307 @@
 }
 
 .hero-description {
-    max-width: 600px;
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.6);
+    max-width: 550px;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
     font-weight: 300;
     line-height: 1.6;
-    margin: 0 auto 3rem;
+    margin-bottom: 1rem;
 }
 
 .hero-actions {
-    pointer-events: auto;
-    /* Re-enable clicks */
+    display: flex;
+    gap: 15px;
+    margin-bottom: 2rem;
 }
 
 .hero-btn-primary {
     position: relative;
     display: inline-flex;
     align-items: center;
-    gap: 12px;
-    padding: 16px 32px;
+    gap: 10px;
+    padding: 14px 32px;
     background: #ffffff;
     color: #000000;
     border: none;
     border-radius: 50px;
     font-size: 1rem;
     font-weight: 700;
-    letter-spacing: 0.02em;
     cursor: pointer;
     overflow: hidden;
     transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.hero-btn-primary::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: #3b82f6;
-    /* Blueish hover */
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease-out;
-    opacity: 0.1;
-}
-
-.hero-btn-primary:hover::before {
-    transform: scaleX(1);
-}
-
 .hero-btn-primary:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
-.hero-btn-primary:active {
-    transform: scale(0.95);
+.hero-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 28px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.hero-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.hero-stats-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-val {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+}
+
+.stat-lbl {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 4px;
+}
+
+.stat-separator {
+    width: 1px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Right Column: Tracker Card --- */
+.hero-card-column {
+    pointer-events: auto;
+    perspective: 1000px;
+}
+
+.onboarding-tracker-card {
+    background: rgba(15, 23, 42, 0.6);
+    /* Dark Glass */
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 25px;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    animation: floatCard 6s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glow effect inside card */
+.onboarding-tracker-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(112, 0, 255, 0.15) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes floatCard {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.onboarding-tracker-card>* {
+    position: relative;
+    z-index: 1;
+}
+
+.card-header-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.phase-badge {
+    background: linear-gradient(135deg, #7000ff, #a855f7);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(112, 0, 255, 0.4);
+}
+
+.phase-title {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+}
+
+.progress-section {
+    margin-bottom: 25px;
+}
+
+.progress-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 8px;
+}
+
+.hero-progress-bar {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.hero-progress-fill {
+    height: 100%;
+    background: #00c6ff;
+    border-radius: 3px;
+    box-shadow: 0 0 10px #00c6ff;
+}
+
+.next-task-highlight {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    transition: background 0.2s;
+}
+
+.next-task-highlight:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.task-icon-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.pulse-dot {
+    width: 12px;
+    height: 12px;
+    background: #ef4444;
+    /* Alert color for pending task */
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+    animation: pulseRed 2s infinite;
+}
+
+@keyframes pulseRed {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 6px rgba(239, 68, 68, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+    }
+}
+
+.task-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.task-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.05em;
+}
+
+.task-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.task-action-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.task-action-btn:hover {
+    background: #00c6ff;
+    color: #000;
+}
+
+.daily-tip {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.daily-tip p {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+    line-height: 1.4;
 }
 
 /* Scroll Indicator */
 .scroll-indicator-wrapper {
     position: absolute;
-    bottom: 40px;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -139,29 +412,39 @@
     align-items: center;
     gap: 8px;
     color: rgba(255, 255, 255, 0.3);
-    animation: pulse 2s infinite;
+    animation: bounce 2s infinite;
     pointer-events: none;
     text-transform: uppercase;
     font-size: 0.7rem;
     letter-spacing: 0.2em;
+    z-index: 10;
 }
 
-@keyframes pulse {
+@keyframes bounce {
 
     0%,
+    20%,
+    50%,
+    80%,
     100% {
-        opacity: 0.3;
+        transform: translateY(0) translateX(-50%);
     }
 
-    50% {
-        opacity: 0.7;
+    40% {
+        transform: translateY(-10px) translateX(-50%);
+    }
+
+    60% {
+        transform: translateY(-5px) translateX(-50%);
     }
 }
 
-/* CSS Limpo - Removidos estilos de detecção de conta */
-
-@media (min-width: 768px) {
+@media (min-width: 1400px) {
     .hero-title {
-        font-size: 6rem;
+        font-size: 5rem;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr 1fr;
     }
 }

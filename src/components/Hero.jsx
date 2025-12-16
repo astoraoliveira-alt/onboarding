@@ -286,41 +286,99 @@ const Hero = ({ employeeName, email }) => {
         <div className="hero-root">
             <ParticleCanvas />
 
-            <div className="hero-ui-content">
-                {/* Default Badge */}
-                <div className="hero-badge animate-fade-in-up">
-                    <span>Nova Experiência de Onboarding</span>
-                </div>
+            <div className="hero-ui-content container">
+                <div className="hero-grid">
+                    {/* Left Column: Inspiration & Welcome */}
+                    <div className="hero-text-column animate-fade-in-up">
+                        <div className="hero-badge">
+                            <span>Sua Jornada Começa Agora</span>
+                        </div>
 
-                <h1 className="hero-title">
-                    Bem-Vindo,<br />
-                    <span className="hero-highlight">{employeeName.split(' ')[0]}</span>
-                    {/* Showing only first name for cleaner look if needed, or full name */}
-                </h1>
+                        <h1 className="hero-title">
+                            Olá, <br />
+                            <span className="hero-highlight">{employeeName.split(' ')[0]}</span>.
+                        </h1>
 
-                <p className="hero-description">
-                    Sua jornada para o futuro na Davos começa agora. Explore o ambiente digital exclusivo que preparamos para você.
-                </p>
+                        <p className="hero-description">
+                            Você não foi contratado apenas pelo que sabe, mas pelo que podemos construir juntos.
+                            Este é o seu centro de controle para dominar nossa cultura, ferramentas e desafios.
+                        </p>
 
-                <div className="hero-actions">
-                    <button className="hero-btn-primary group" onClick={() => {
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                        setTimeout(() => {
-                            window.dispatchEvent(new CustomEvent('expandHeader'));
-                        }, 500);
-                    }}>
-                        <span className="relative z-10">Acessar Meu Painel</span>
-                        <ArrowRight className="w-4 h-4 relative z-10 transition-transform group-hover:translate-x-1" />
-                    </button>
+                        <div className="hero-actions">
+                            <button className="hero-btn-primary group" onClick={() => {
+                                window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+                            }}>
+                                <span className="relative z-10">Iniciar Jornada</span>
+                                <ArrowRight className="w-4 h-4 relative z-10 transition-transform group-hover:translate-x-1" />
+                            </button>
+
+                            <button className="hero-btn-secondary" onClick={() => {
+                                document.getElementById('teams-manual').scrollIntoView({ behavior: 'smooth' });
+                            }}>
+                                <span>Ver Manuais</span>
+                            </button>
+                        </div>
+
+                        <div className="hero-stats-row">
+                            <div className="stat-item">
+                                <span className="stat-val">30</span>
+                                <span className="stat-lbl">Dias de Imersão</span>
+                            </div>
+                            <div className="stat-separator"></div>
+                            <div className="stat-item">
+                                <span className="stat-val">100%</span>
+                                <span className="stat-lbl">Suporte</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Right Column: Actionable Tracker Card */}
+                    <div className="hero-card-column animate-pop-in">
+                        <div className="onboarding-tracker-card glass-panel">
+                            <div className="card-header-hero">
+                                <div className="phase-badge">Fase 1</div>
+                                <span className="phase-title">Imersão Cultural</span>
+                            </div>
+
+                            <div className="progress-section">
+                                <div className="progress-labels">
+                                    <span>Progresso Inicial</span>
+                                    <span>15%</span>
+                                </div>
+                                <div className="hero-progress-bar">
+                                    <div className="hero-progress-fill" style={{ width: '15%' }}></div>
+                                </div>
+                            </div>
+
+                            <div className="next-task-highlight">
+                                <div className="task-icon-box">
+                                    <div className="pulse-dot"></div>
+                                </div>
+                                <div className="task-details">
+                                    <span className="task-label">Próxima Prioridade</span>
+                                    <span className="task-name">Configurar Acesso Microsoft</span>
+                                </div>
+                                <button className="task-action-btn" onClick={() => {
+                                    document.getElementById('microsoft-section').scrollIntoView({ behavior: 'smooth' });
+                                }}>
+                                    Ir
+                                </button>
+                            </div>
+
+                            <div className="daily-tip">
+                                <Info size={14} className="text-secondary" />
+                                <p>"Use o manual do Teams para configurar suas reuniões."</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div className="scroll-indicator-wrapper">
-                <span>Interaja com o Universo</span>
+                <span>Explore o Universo Davos</span>
                 <MousePointer2 size={16} />
             </div>
         </div>
     );
 };
-
 export default Hero;
