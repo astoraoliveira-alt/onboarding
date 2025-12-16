@@ -282,50 +282,15 @@ const ParticleCanvas = () => {
 };
 
 const Hero = ({ employeeName, email }) => {
-    const [detectedAccount, setDetectedAccount] = useState(null);
-
-    useEffect(() => {
-        // 1. Try to get email from URL (Real world onboarding link scenario)
-        const params = new URLSearchParams(window.location.search);
-        const urlEmail = params.get('email');
-
-        // 2. Fallback to prop or mock for demonstration purposes
-        const targetEmail = urlEmail || email || 'ana.silva@davosbr.com';
-
-        // 3. "Detect" logic
-        if (targetEmail && targetEmail.includes('@davosbr.com')) {
-            // Simulate a scanning delay for effect
-            setTimeout(() => {
-                setDetectedAccount(targetEmail);
-            }, 800);
-        }
-    }, [email]);
-
     return (
         <div className="hero-root">
             <ParticleCanvas />
 
             <div className="hero-ui-content">
                 {/* Default Badge */}
-                {!detectedAccount && (
-                    <div className="hero-badge animate-fade-in-up">
-                        <span>Nova Experiência de Onboarding</span>
-                    </div>
-                )}
-
-                {/* Detected Account Badge (Replaces standard badge if found) */}
-                {detectedAccount && (
-                    <div className="account-detection-card animate-pop-in">
-                        <div className="detection-icon">
-                            <div className="pulse-ring"></div>
-                            <div className="verified-dot"></div>
-                        </div>
-                        <div className="detection-info">
-                            <span className="detection-label">Identidade Davos Verificada</span>
-                            <span className="detection-value">{detectedAccount}</span>
-                        </div>
-                    </div>
-                )}
+                <div className="hero-badge animate-fade-in-up">
+                    <span>Nova Experiência de Onboarding</span>
+                </div>
 
                 <h1 className="hero-title">
                     Bem-Vindo,<br />
