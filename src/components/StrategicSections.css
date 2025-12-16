@@ -26,343 +26,200 @@
     margin: 0 auto;
 }
 
-/* === Career Styles Updated === */
-.career-path-container {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-/* Track Labels (Separadores) */
-.track-label {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 30px 0 10px;
-    position: relative;
-    text-align: center;
-}
-
-.track-label::before,
-.track-label::after {
-    content: '';
-    flex: 1;
-    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
-    margin: 0 20px;
-}
-
-.track-label span {
-    background: rgba(255, 255, 255, 0.08);
-    /* Fundo leve */
-    padding: 8px 20px;
-    border-radius: 30px;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.track-label.execution span {
-    color: #38bdf8;
-    /* Azul claro operacional */
-    border-color: rgba(56, 189, 248, 0.2);
-}
-
-.track-label.management span {
-    color: #a78bfa;
-    /* Roxo executivo */
-    border-color: rgba(167, 139, 250, 0.2);
-    margin-top: 20px;
-    /* Mais espaço antes do topo */
-}
-
-.career-step {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-    position: relative;
-}
-
-/* Linha conectora vertical */
-.career-step:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    left: 35px;
-    top: 70px;
-    bottom: -25px;
-    width: 2px;
-    background: rgba(255, 255, 255, 0.05);
-    /* Mais sutil */
-    z-index: 0;
-}
-
-.step-circle {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background: rgba(25, 25, 30, 1);
-    /* Fundo sólido para cobrir linha */
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-weight: 700;
-    z-index: 1;
-    flex-shrink: 0;
-    font-size: 0.9rem;
-}
-
-.step-content {
-    background: rgba(255, 255, 255, 0.02);
-    padding: 20px 25px;
-    border-radius: 16px;
-    flex-grow: 1;
-    border-left: 4px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.step-content:hover {
-    background: rgba(255, 255, 255, 0.04);
-}
-
-.step-content h3 {
-    margin: 0;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.15rem;
-    flex-wrap: wrap;
-    /* Para mobile */
-    gap: 10px;
-}
-
-/* Time Badge (Novo) */
-.time-badge {
-    font-size: 0.75rem;
-    background: rgba(255, 255, 255, 0.08);
-    color: rgba(255, 255, 255, 0.6);
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-weight: 500;
-}
-
-.time-badge.blue {
-    background: rgba(56, 189, 248, 0.1);
-    color: #38bdf8;
-}
-
-.time-badge.purple {
-    background: rgba(167, 139, 250, 0.1);
-    color: #a78bfa;
-}
-
-.time-badge.gold {
-    background: rgba(251, 191, 36, 0.1);
-    color: #fbbf24;
-}
-
-.step-reqs {
-    font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.55);
-    line-height: 1.5;
-    margin: 0;
-}
-
-/* Variantes de Estilo por Nível */
-
-/* Nível Consultor (Blue) */
-.step-circle.highlight {
-    border-color: #00c6ff;
-    color: #00c6ff;
-    background: rgba(0, 198, 255, 0.1);
-}
-
-.step-content.highlight-border {
-    border-left-color: #00c6ff;
-}
-
-/* Nível Manager (Purple) */
-.step-circle.manager {
-    border-color: #7000ff;
-    color: #7000ff;
-    background: rgba(112, 0, 255, 0.1);
-}
-
-.step-content.manager-border {
-    border-left-color: #7000ff;
-}
-
-/* Nível Director (Gold) */
-.step-circle.director {
-    border-color: #fbbf24;
-    color: #fbbf24;
-    background: rgba(251, 191, 36, 0.1);
-}
-
-.step-content.director-border {
-    border-left-color: #fbbf24;
-}
-
-/* === Business Context Styles === */
-/* (Mantendo estilos anteriores para garantir integridade) */
-.mission-vision-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-bottom: 60px;
-}
-
-.mv-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 30px;
-    border-radius: 20px;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.mv-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.mv-icon {
-    width: 60px;
-    height: 60px;
-    background: rgba(112, 0, 255, 0.1);
-    color: #7000ff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px;
-}
-
-.mv-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: #fff;
-}
-
-.mv-card p {
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.6;
-}
-
-/* Timeline History */
+/* === Business Context - Vertical Timeline === */
 .history-timeline {
     position: relative;
     padding: 40px 0;
-    margin-top: 80px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
+/* Linha Central */
 .timeline-track {
     position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateY(-50%);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.05), #7000ff, rgba(255, 255, 255, 0.05));
+    transform: translateX(-50%);
     z-index: 0;
 }
 
 .timeline-events {
     display: flex;
-    justify-content: flex-start;
-    /* Permite scroll horizontal fluido */
+    flex-direction: column;
+    gap: 0;
+    /* Gap zerado, controlado por margin nos items */
     position: relative;
     z-index: 1;
-    overflow-x: auto;
-    padding-bottom: 30px;
-    /* Espaço pro scrollbar */
-    gap: 50px;
-    /* Mais espaço entre eventos */
-    padding-left: 20px;
-    padding-right: 20px;
 }
 
 .t-event {
-    flex: 0 0 280px;
-    /* Largura fixa maior para texto */
-    text-align: center;
     display: flex;
-    flex-direction: column;
+    width: 50%;
+    position: relative;
+    padding: 0 40px;
+    box-sizing: border-box;
     align-items: center;
-    gap: 15px;
+    margin-bottom: 60px;
 }
 
-.t-year {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #4b5563;
-    /* Cinza para passado */
-    background: rgba(31, 41, 55, 0.5);
-    padding: 5px 15px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s;
+/* Eventos Ímpares (Esquerda) */
+.t-event:nth-child(odd) {
+    align-self: flex-start;
+    text-align: right;
+    flex-direction: row-reverse;
+    /* Conteudo | Dot | Linha */
 }
 
+/* Eventos Pares (Direita) */
+.t-event:nth-child(even) {
+    align-self: flex-end;
+    text-align: left;
+    flex-direction: row;
+    /* Linha | Dot | Conteudo */
+}
+
+/* Ponto Central */
 .t-dot {
+    position: absolute;
     width: 16px;
+    /* Tamanho normal */
     height: 16px;
     background: #4b5563;
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s;
+    border: 3px solid var(--bg-dark);
+    /* Borda para separar da linha */
+    box-shadow: 0 0 0 2px #4b5563;
+    /* Ring externo */
+    z-index: 2;
+    top: 20px;
+    /* Alinhado com o topo do card/ano */
+}
+
+/* Posicionamento do Ponto */
+.t-event:nth-child(odd) .t-dot {
+    right: -11px;
+    /* (width + border)/2 */
+}
+
+.t-event:nth-child(even) .t-dot {
+    left: -11px;
+}
+
+/* Conteúdo do Evento */
+.t-content {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.t-event:hover .t-content {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-5px);
+}
+
+.t-year {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #4b5563;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 15px;
 }
 
 .t-content h4 {
-    color: #e5e7eb;
-    margin-bottom: 5px;
-    font-size: 1.1rem;
+    margin: 10px 0;
+    font-size: 1.25rem;
+    color: #fff;
 }
 
 .t-content p {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.6);
     line-height: 1.6;
 }
 
+
 /* DESTAQUE 2025/2026 */
 .t-event.highlight .t-year {
-    color: #fff;
     background: #7000ff;
-    /* Davos Purple */
-    border-color: #7000ff;
-    transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(112, 0, 255, 0.5);
+    color: #fff;
 }
 
 .t-event.highlight .t-dot {
     background: #00c6ff;
-    /* Davos Blue */
+    box-shadow: 0 0 15px #00c6ff;
     width: 20px;
     height: 20px;
-    box-shadow: 0 0 15px #00c6ff;
-    border: 2px solid #fff;
+    border-color: #fff;
 }
 
-.t-event.highlight .t-content h4 {
+.t-event:nth-child(odd).highlight .t-dot {
+    right: -13px;
+}
+
+.t-event:nth-child(even).highlight .t-dot {
+    left: -13px;
+}
+
+.t-event.highlight .t-content {
+    border-color: rgba(112, 0, 255, 0.3);
+    background: rgba(112, 0, 255, 0.05);
+}
+
+.t-event.highlight h4 {
     color: #00c6ff;
-    font-weight: 700;
 }
 
-.t-event.highlight .t-content p {
-    color: rgba(255, 255, 255, 0.9);
+/* Responsivo Mobile (< 768px) -> Linha à esquerda */
+@media (max-width: 768px) {
+    .timeline-track {
+        left: 20px;
+    }
+
+    .t-event {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 0;
+        text-align: left;
+        align-items: flex-start;
+        margin-bottom: 40px;
+    }
+
+    .t-event:nth-child(odd),
+    .t-event:nth-child(even) {
+        align-self: flex-start;
+        flex-direction: column;
+        text-align: left;
+    }
+
+    /* Reposiciona Dots para esquerda */
+    .t-event:nth-child(odd) .t-dot,
+    .t-event:nth-child(even) .t-dot {
+        left: 11px;
+        /* Ajuste fino baseado na linha em left: 20px */
+        right: auto;
+    }
+
+    .t-dot {
+        top: 0;
+        /* Alinha com o inicio */
+    }
+
+    .t-year {
+        margin-bottom: 10px;
+    }
 }
 
-/* Business Model */
+
+/* === Business Model === */
 .business-model-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -405,7 +262,7 @@
 }
 
 /* === Role Expectations Styles === */
-/* ... Mantendo estilos anteriores ... */
+/* Mantendo estilos anteriores intactos... */
 .tabs-container {
     display: flex;
     justify-content: center;
@@ -496,6 +353,224 @@
     margin-top: 3px;
 }
 
+/* === Career Styles === */
+/* ... Career styles from previous steps (Track Labels, Time Badge, etc) ... */
+.career-path-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.track-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0 10px;
+    position: relative;
+    text-align: center;
+}
+
+.track-label::before,
+.track-label::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    margin: 0 20px;
+}
+
+.track-label span {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.track-label.execution span {
+    color: #38bdf8;
+    border-color: rgba(56, 189, 248, 0.2);
+}
+
+.track-label.management span {
+    color: #a78bfa;
+    border-color: rgba(167, 139, 250, 0.2);
+    margin-top: 20px;
+}
+
+.career-step {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    position: relative;
+}
+
+.career-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 35px;
+    top: 70px;
+    bottom: -25px;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.05);
+    z-index: 0;
+}
+
+.step-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(25, 25, 30, 1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 700;
+    z-index: 1;
+    flex-shrink: 0;
+    font-size: 0.9rem;
+}
+
+.step-content {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 20px 25px;
+    border-radius: 16px;
+    flex-grow: 1;
+    border-left: 4px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.step-content:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.step-content h3 {
+    margin: 0;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.15rem;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.time-badge {
+    font-size: 0.75rem;
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.6);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.time-badge.blue {
+    background: rgba(56, 189, 248, 0.1);
+    color: #38bdf8;
+}
+
+.time-badge.purple {
+    background: rgba(167, 139, 250, 0.1);
+    color: #a78bfa;
+}
+
+.time-badge.gold {
+    background: rgba(251, 191, 36, 0.1);
+    color: #fbbf24;
+}
+
+.step-reqs {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.step-circle.highlight {
+    border-color: #00c6ff;
+    color: #00c6ff;
+    background: rgba(0, 198, 255, 0.1);
+}
+
+.step-content.highlight-border {
+    border-left-color: #00c6ff;
+}
+
+.step-circle.manager {
+    border-color: #7000ff;
+    color: #7000ff;
+    background: rgba(112, 0, 255, 0.1);
+}
+
+.step-content.manager-border {
+    border-left-color: #7000ff;
+}
+
+.step-circle.director {
+    border-color: #fbbf24;
+    color: #fbbf24;
+    background: rgba(251, 191, 36, 0.1);
+}
+
+.step-content.director-border {
+    border-left-color: #fbbf24;
+}
+
+/* Mission / Vision styles */
+.mission-vision-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.mv-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.mv-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.mv-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(112, 0, 255, 0.1);
+    color: #7000ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.mv-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.mv-card p {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+}
+
+/* Incentives Grid */
 .incentives-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -523,72 +598,15 @@
     display: block;
 }
 
-/* Base Responsive */
+.incentive-card h3 {
+    margin-bottom: 10px;
+}
+
 @media (max-width: 768px) {
 
     .business-model-grid,
     .checklist-grid,
     .incentives-grid {
         grid-template-columns: 1fr;
-    }
-
-    .timeline-events {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 30px;
-        overflow-x: hidden;
-        /* Remove scroll horizontal no mobile para virar lista */
-    }
-
-    .timeline-track {
-        left: 20px;
-        top: 0;
-        bottom: 0;
-        width: 2px;
-        height: auto;
-        transform: none;
-    }
-
-    .t-event {
-        flex: 1;
-        /* Volta ao normal vertical */
-        flex-direction: row;
-        text-align: left;
-        padding-left: 50px;
-        min-width: auto;
-    }
-
-    .t-year {
-        position: absolute;
-        left: 0;
-        min-width: 80px;
-        /* Garante tamanho para ano */
-        text-align: center;
-        font-size: 0.8rem;
-        padding: 4px 8px;
-    }
-
-    .t-dot {
-        display: none;
-    }
-
-    .career-step {
-        flex-direction: column;
-        align-items: flex-stretch;
-        gap: 15px;
-    }
-
-    .career-step:not(:last-child)::after {
-        display: none;
-    }
-
-    .step-circle {
-        margin: 0 auto;
-    }
-
-    .step-content h3 {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
     }
 }
