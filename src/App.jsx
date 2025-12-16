@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, useScroll, useSpring, useInView } from 'framer-motion';
+import { ArrowUp } from 'lucide-react';
 import DynamicHeader from './components/DynamicHeader';
 import Hero from './components/Hero';
 import SecuritySection from './components/SecuritySection';
@@ -23,9 +24,18 @@ const MOCK_EMPLOYEE = {
   salary: 'R$ 8.500,00',
 };
 
-function Section({ children, id }) {
+function Section({ children, id, showBackBtn = false }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  const scrollToJourney = () => {
+    const element = document.getElementById('journey-overview');
+    if (element) {
+      const yOffset = -90;
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  };
 
   return (
     <section ref={ref} id={id} style={{
@@ -35,6 +45,15 @@ function Section({ children, id }) {
       scrollMarginTop: "100px" // Ajuda no scroll smooth
     }}>
       {children}
+
+      {showBackBtn && (
+        <div className="back-to-journey-container">
+          <button onClick={scrollToJourney} className="back-to-journey-btn">
+            <ArrowUp size={16} />
+            Voltar para o Mapa
+          </button>
+        </div>
+      )}
     </section>
   );
 }
@@ -64,43 +83,43 @@ function App() {
 
         {/* Other Sections */}
         <div className="container main-content">
-          <Section>
+          <Section id="journey-overview">
             <JourneyOverview />
           </Section>
 
-          <Section id="business-context-section">
+          <Section id="business-context-section" showBackBtn={true}>
             <BusinessContext />
           </Section>
 
-          <Section id="role-expectations-section">
+          <Section id="role-expectations-section" showBackBtn={true}>
             <RoleExpectations />
           </Section>
 
-          <Section id="career-growth-section">
+          <Section id="career-growth-section" showBackBtn={true}>
             <CareerGrowth />
           </Section>
 
-          <Section id="security-section">
+          <Section id="security-section" showBackBtn={true}>
             <SecuritySection />
           </Section>
 
-          <Section id="microsoft-section">
+          <Section id="microsoft-section" showBackBtn={true}>
             <MicrosoftIntro />
           </Section>
 
-          <Section id="outlook-setup-section">
+          <Section id="outlook-setup-section" showBackBtn={true}>
             <OutlookSetup />
           </Section>
 
-          <Section id="teams-manual-section">
+          <Section id="teams-manual-section" showBackBtn={true}>
             <TeamsManual />
           </Section>
 
-          <Section id="downloads-section">
+          <Section id="downloads-section" showBackBtn={true}>
             <DownloadsSection />
           </Section>
 
-          <Section id="tools-section">
+          <Section id="tools-section" showBackBtn={true}>
             <ToolsAndSupport />
           </Section>
         </div>

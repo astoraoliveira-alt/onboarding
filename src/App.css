@@ -1,51 +1,89 @@
-.app-container {
-  min-height: 100vh;
-  position: relative;
-  overflow-x: hidden;
-  background-color: #030014;
-  /* Deep dark bg */
+/* App.css */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --primary: #7000ff;
+  --secondary: #00c6ff;
+  --bg-dark: #050514;
+  --text-main: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.7);
+  --glass: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
 }
 
-/* Progress Bar */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: 'Outfit', sans-serif;
+  overflow-x: hidden;
+}
+
+.app-container {
+  position: relative;
+  width: 100%;
+}
+
 .progress-bar-top {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  height: 3px;
+  background: linear-gradient(90deg, var(--secondary), var(--primary));
   transform-origin: 0%;
-  z-index: 100;
-  box-shadow: 0 0 10px rgba(0, 198, 255, 0.7);
+  z-index: 1000;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+main {
+  padding-top: 80px;
+  /* Space for fixed header */
 }
 
 .main-content {
-  position: relative;
-  z-index: 10;
   display: flex;
   flex-direction: column;
-  gap: 80px;
-  /* More breathing room */
-  padding-bottom: 50px;
+  gap: 100px;
+  padding-bottom: 100px;
 }
 
-.profile-wrapper {
+/* Back to Journey Button */
+.back-to-journey-container {
   display: flex;
   justify-content: center;
-  margin-top: -20px;
-  margin-bottom: 20px;
+  margin-top: 30px;
+  opacity: 0.6;
+  transition: opacity 0.3s;
 }
 
-/* Section overrides for stricter spacing in V2 */
-.section-container {
-  margin-bottom: 0 !important;
-  /* Managed by flex gap */
+.back-to-journey-container:hover {
+  opacity: 1;
 }
 
-/* Enhancing global typography for V2 */
-h1,
-h2,
-h3,
-h4 {
-  letter-spacing: -0.5px;
+.back-to-journey-btn {
+  background: transparent;
+  border: 1px solid var(--glass-border);
+  color: var(--text-muted);
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.back-to-journey-btn:hover {
+  background: var(--glass);
+  color: #fff;
+  border-color: var(--secondary);
+  transform: translateY(-2px);
 }
