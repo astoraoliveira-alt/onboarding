@@ -67,6 +67,12 @@ const BusinessContext = () => {
                 </div>
             </div>
 
+            {/* Timeline Header */}
+            <div className="section-head-title" style={{ marginTop: '80px', marginBottom: '40px' }}>
+                <h2>Nossa Jornada</h2>
+                <p>Conheça a trajetória de evolução e experiência que culminou na criação da Davos.</p>
+            </div>
+
             {/* Timeline */}
             <div className="history-timeline">
                 <div className="timeline-track"></div>
