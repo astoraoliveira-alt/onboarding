@@ -1,5 +1,4 @@
 import React from 'react';
-import { TrendingUp, GraduationCap, Gift, DollarSign, Star, BookOpen } from 'lucide-react';
 import './StrategicSections.css';
 
 const CareerGrowth = () => {
@@ -7,54 +6,112 @@ const CareerGrowth = () => {
         <section className="strategic-section">
             <div className="section-head-title">
                 <h2>Carreira, Desenvolvimento & Incentivos</h2>
-                <p>Crescemos juntos. Conheça as oportunidades que a Davos oferece para o seu futuro.</p>
+                <p>Uma trilha clara de evolução, do nível de entrada à diretoria, focada em mérito e impacto.</p>
             </div>
 
             {/* Career Path Steps */}
             <div className="career-path-container">
+
+                {/* --- FASE 1: EXECUÇÃO & FUNDAÇÃO --- */}
                 <div className="career-step">
-                    <div className="step-circle">JR</div>
+                    <div className="step-circle">EL</div>
                     <div className="step-content">
-                        <h3>
-                            <span>Analista Júnior</span>
-                            <span className="step-salary">Entrada</span>
-                        </h3>
-                        <p className="step-reqs">Foco em execução e aprendizado. Domínio das ferramentas básicas.</p>
+                        <h3><span>MC - Entry Level</span></h3>
+                        <p className="step-reqs">Foco em aprendizado intensivo, disciplina operacional e apoio à execução de tarefas de projeto.</p>
                     </div>
                 </div>
 
                 <div className="career-step">
-                    <div className="step-circle">PL</div>
+                    <div className="step-circle">AS</div>
                     <div className="step-content">
-                        <h3>
-                            <span>Analista Pleno</span>
-                            <span className="step-salary">Crescimento</span>
-                        </h3>
-                        <p className="step-reqs">Autonomia na execução, resolução de problemas complexos e mentoria de juniores.</p>
+                        <h3><span>MC - Associate</span></h3>
+                        <p className="step-reqs">Execução consistente de atividades com qualidade e absorção da cultura de consultoria.</p>
                     </div>
                 </div>
 
                 <div className="career-step">
-                    <div className="step-circle">SR</div>
+                    <div className="step-circle">AC</div>
                     <div className="step-content">
-                        <h3>
-                            <span>Analista Sênior</span>
-                            <span className="step-salary">Liderança</span>
-                        </h3>
-                        <p className="step-reqs">Referência técnica, arquitetura de soluções e interface direta com clientes estratégicos.</p>
+                        <h3><span>MC - Associate Consultant</span></h3>
+                        <p className="step-reqs">Início da análise crítica de dados e processos, apoiando diretamente a construção de soluções.</p>
                     </div>
                 </div>
 
                 <div className="career-step">
-                    <div className="step-circle" style={{ borderColor: '#00c6ff', color: '#00c6ff' }}>ESP</div>
-                    <div className="step-content" style={{ borderLeftColor: '#00c6ff' }}>
-                        <h3>
-                            <span>Especialista / Tech Lead</span>
-                            <span className="step-salary" style={{ color: '#00c6ff', background: 'rgba(0,198,255,0.1)' }}>Topo Técnico</span>
-                        </h3>
-                        <p className="step-reqs">Responsável por decisões técnicas críticas, gestão de squad ou profundidade extrema em uma tecnologia.</p>
+                    <div className="step-circle">SA</div>
+                    <div className="step-content">
+                        <h3><span>MC - Senior Associate</span></h3>
+                        <p className="step-reqs">Autonomia na execução de tarefas complexas e responsabilidade pela qualidade das entregas.</p>
                     </div>
                 </div>
+
+                <div className="career-step">
+                    <div className="step-circle">EA</div>
+                    <div className="step-content">
+                        <h3><span>MC - Executive Associate</span></h3>
+                        <p className="step-reqs">Referência técnica na execução, ponte entre operação e gestão, garantindo a disciplina do time.</p>
+                    </div>
+                </div>
+
+                {/* --- FASE 2: CONSULTORIA & SOLUÇÃO --- */}
+                <div className="career-step">
+                    <div className="step-circle highlight">CO</div>
+                    <div className="step-content highlight-border">
+                        <h3><span>MC - Consultant</span> <span className="step-salary blue">Consultor</span></h3>
+                        <p className="step-reqs">Gestão de módulos do projeto, interação direta com clientes e resolução autônoma de problemas.</p>
+                    </div>
+                </div>
+
+                <div className="career-step">
+                    <div className="step-circle highlight">SC</div>
+                    <div className="step-content highlight-border">
+                        <h3><span>MC - Senior Consultant</span> <span className="step-salary blue">Líder de Frente</span></h3>
+                        <p className="step-reqs">Liderança de frentes de trabalho ("workstreams"), gestão técnica e mentoria de associados.</p>
+                    </div>
+                </div>
+
+                {/* --- FASE 3: GESTÃO & LIDERANÇA --- */}
+                <div className="career-step">
+                    <div className="step-circle manager">MG</div>
+                    <div className="step-content manager-border">
+                        <h3><span>MC - Manager</span> <span className="step-salary purple">Gestão</span></h3>
+                        <p className="step-reqs">Gestão integral de projetos (Escopo, Prazo, Custo), liderança de times multidisciplinares.</p>
+                    </div>
+                </div>
+
+                <div className="career-step">
+                    <div className="step-circle manager">SM</div>
+                    <div className="step-content manager-border">
+                        <h3><span>MC - Senior Manager</span> <span className="step-salary purple">Gestão Sênior</span></h3>
+                        <p className="step-reqs">Gestão de múltiplos projetos ou contas complexas, relacionamento tático e expansão de contratos.</p>
+                    </div>
+                </div>
+
+                <div className="career-step">
+                    <div className="step-circle manager">ES</div>
+                    <div className="step-content manager-border">
+                        <h3><span>MC - Executive Sr Manager</span> <span className="step-salary purple">Executivo</span></h3>
+                        <p className="step-reqs">Liderança de programas de transformação, desenvolvimento de novas ofertas e estratégia de delivery.</p>
+                    </div>
+                </div>
+
+                {/* --- FASE 4: DIREÇÃO & ESTRATÉGIA --- */}
+                <div className="career-step">
+                    <div className="step-circle director">AD</div>
+                    <div className="step-content director-border">
+                        <h3><span>MC - Associate Director</span> <span className="step-salary gold">Direção</span></h3>
+                        <p className="step-reqs">Desenvolvimento de contas estratégicas, liderança comercial (Sales) e gestão de P&L.</p>
+                    </div>
+                </div>
+
+                <div className="career-step">
+                    <div className="step-circle director">DR</div>
+                    <div className="step-content director-border">
+                        <h3><span>MC - Director</span> <span className="step-salary gold">Sócio</span></h3>
+                        <p className="step-reqs">Definição estratégica da companhia, relacionamento C-Level e condução do futuro da organização.</p>
+                    </div>
+                </div>
+
             </div>
 
             {/* Incentives Grid */}
@@ -67,27 +124,27 @@ const CareerGrowth = () => {
                 <div className="incentive-card">
                     <div className="incentive-icon">📚</div>
                     <h3>Budget de Educação</h3>
-                    <p>R$ 2.000,00 anuais para cursos, livros e eventos da área.</p>
+                    <p>Incentivo anual para cursos, especializações e eventos da área.</p>
                 </div>
                 <div className="incentive-card">
                     <div className="incentive-icon">🇺🇸</div>
-                    <h3>Incentivo Idiomas</h3>
-                    <p>Reembolso de 50% em cursos de Inglês ou Espanhol.</p>
+                    <h3>Idiomas</h3>
+                    <p>Apoio financeiro para cursos de Inglês focado em negócios.</p>
                 </div>
                 <div className="incentive-card">
                     <div className="incentive-icon">🏥</div>
                     <h3>Saúde Premium</h3>
-                    <p>Plano de saúde Top Nacional sem coparticipação.</p>
+                    <p>Plano de saúde Top Nacional para você e dependentes.</p>
                 </div>
                 <div className="incentive-card">
                     <div className="incentive-icon">🏅</div>
                     <h3>Certificações</h3>
-                    <p>Pagamos 100% das suas certificações oficiais (Microsoft, AWS, etc).</p>
+                    <p>Reembolso integral de certificações oficiais (Microsoft, AWS, PMP, etc).</p>
                 </div>
                 <div className="incentive-card">
-                    <div className="incentive-icon">🧘</div>
-                    <h3>Bem-estar</h3>
-                    <p>Assinatura Gympass e suporte psicológico ilimitado.</p>
+                    <div className="incentive-icon">🚀</div>
+                    <h3>Carreira Acelerada</h3>
+                    <p>Ciclos de avaliação curtos que permitem promoções baseadas em mérito real.</p>
                 </div>
             </div>
 
