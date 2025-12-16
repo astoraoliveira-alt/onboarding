@@ -1,15 +1,36 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/davos-favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portal de Onboarding - Davos Consulting. Bem-vindo à equipe!" />
-    <meta name="theme-color" content="#030014" />
-    <title>Onboarding - Davos Consulting</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="/davos-favicon.ico" />
+
+  <!-- Viewport otimizado para mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+
+  <!-- Meta tags gerais -->
+  <meta name="description" content="Portal de Onboarding - Davos Consulting. Bem-vindo à equipe!" />
+  <meta name="theme-color" content="#030014" />
+
+  <!-- iOS Meta Tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Davos Onboarding" />
+  <link rel="apple-touch-icon" href="/davos-favicon.ico" />
+
+  <!-- Android Meta Tags -->
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="application-name" content="Davos Onboarding" />
+
+  <!-- Prevent auto-zoom on input focus (iOS) -->
+  <meta name="format-detection" content="telephone=no" />
+
+  <title>Onboarding - Davos Consulting</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>
