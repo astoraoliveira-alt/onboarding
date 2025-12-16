@@ -27,6 +27,7 @@
 }
 
 /* === Business Context - Vertical Timeline === */
+/* ... (Timeline Styles - Mantidos iguais) ... */
 .history-timeline {
     position: relative;
     padding: 40px 0;
@@ -34,7 +35,6 @@
     margin: 0 auto;
 }
 
-/* Linha Central */
 .timeline-track {
     position: absolute;
     top: 0;
@@ -50,7 +50,6 @@
     display: flex;
     flex-direction: column;
     gap: 0;
-    /* Gap zerado, controlado por margin nos items */
     position: relative;
     z-index: 1;
 }
@@ -65,50 +64,38 @@
     margin-bottom: 60px;
 }
 
-/* Eventos Ímpares (Esquerda) */
 .t-event:nth-child(odd) {
     align-self: flex-start;
     text-align: right;
     flex-direction: row-reverse;
-    /* Conteudo | Dot | Linha */
 }
 
-/* Eventos Pares (Direita) */
 .t-event:nth-child(even) {
     align-self: flex-end;
     text-align: left;
     flex-direction: row;
-    /* Linha | Dot | Conteudo */
 }
 
-/* Ponto Central */
 .t-dot {
     position: absolute;
     width: 16px;
-    /* Tamanho normal */
     height: 16px;
     background: #4b5563;
     border-radius: 50%;
     border: 3px solid var(--bg-dark);
-    /* Borda para separar da linha */
     box-shadow: 0 0 0 2px #4b5563;
-    /* Ring externo */
     z-index: 2;
     top: 20px;
-    /* Alinhado com o topo do card/ano */
 }
 
-/* Posicionamento do Ponto */
 .t-event:nth-child(odd) .t-dot {
     right: -11px;
-    /* (width + border)/2 */
 }
 
 .t-event:nth-child(even) .t-dot {
     left: -11px;
 }
 
-/* Conteúdo do Evento */
 .t-content {
     background: rgba(255, 255, 255, 0.03);
     padding: 25px;
@@ -146,8 +133,6 @@
     line-height: 1.6;
 }
 
-
-/* DESTAQUE 2025/2026 */
 .t-event.highlight .t-year {
     background: #7000ff;
     color: #fff;
@@ -178,7 +163,6 @@
     color: #00c6ff;
 }
 
-/* Responsivo Mobile (< 768px) -> Linha à esquerda */
 @media (max-width: 768px) {
     .timeline-track {
         left: 20px;
@@ -200,17 +184,14 @@
         text-align: left;
     }
 
-    /* Reposiciona Dots para esquerda */
     .t-event:nth-child(odd) .t-dot,
     .t-event:nth-child(even) .t-dot {
         left: 11px;
-        /* Ajuste fino baseado na linha em left: 20px */
         right: auto;
     }
 
     .t-dot {
         top: 0;
-        /* Alinha com o inicio */
     }
 
     .t-year {
@@ -219,50 +200,91 @@
 }
 
 
-/* === Business Model === */
+/* === Business Model REWORKED === */
 .business-model-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    margin-top: 60px;
+    gap: 40px;
+    /* Mais espaço entre colunas */
+    margin-top: 80px;
+    margin-bottom: 80px;
 }
 
 .bm-col h3 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     color: white;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    font-weight: 700;
 }
 
 .bm-list {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 
+/* Novo Estilo de Card: Fundo escuro sólido/translucido, Borda esquerda colorida, Glow sutil */
 .bm-item {
-    background: rgba(255, 255, 255, 0.03);
-    padding: 15px 20px;
+    background: rgba(10, 10, 20, 0.6);
+    /* Mais escuro */
+    padding: 25px 30px;
     border-radius: 12px;
-    border-left: 3px solid #7000ff;
+    /* Cantos arredondados, mas não muito */
+    border-left: 4px solid #7000ff;
+    /* Borda grossa à esquerda */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 8px;
+    transition: all 0.3s ease;
+    cursor: default;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.bm-item:hover {
+    transform: translateX(5px);
+    background: rgba(20, 20, 35, 0.8);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Variante para Diferenciais (Amarelo/Roxo) */
+.bm-col.diferenciais .bm-item {
+    border-left-color: #fbbf24;
+    /* Amarelo/Dourado */
+}
+
+/* Variante Hover Glow baseado na cor */
+.bm-col:not(.diferenciais) .bm-item:hover {
+    box-shadow: -5px 5px 20px rgba(112, 0, 255, 0.15);
+}
+
+.bm-col.diferenciais .bm-item:hover {
+    box-shadow: -5px 5px 20px rgba(251, 191, 36, 0.15);
 }
 
 .bm-item strong {
     color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: block;
 }
 
 .bm-item span {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.5);
+    /* Texto secundário mais apagado */
+    font-weight: 400;
 }
 
-/* === Role Expectations Styles === */
-/* Mantendo estilos anteriores intactos... */
+
+/* === Career Styles === */
+/* ... Mantendo estilos anteriores ... */
+/* (Copiando e colando estilos Career e Role Expectations para não perder) */
 .tabs-container {
     display: flex;
     justify-content: center;
@@ -353,8 +375,6 @@
     margin-top: 3px;
 }
 
-/* === Career Styles === */
-/* ... Career styles from previous steps (Track Labels, Time Badge, etc) ... */
 .career-path-container {
     display: flex;
     flex-direction: column;
@@ -525,7 +545,6 @@
     border-left-color: #fbbf24;
 }
 
-/* Mission / Vision styles */
 .mission-vision-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -570,7 +589,6 @@
     line-height: 1.6;
 }
 
-/* Incentives Grid */
 .incentives-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

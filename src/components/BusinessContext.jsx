@@ -29,7 +29,7 @@ const BusinessContext = () => {
                 </div>
             </div>
 
-            {/* Business Model */}
+            {/* Business Model (REMODELADO COMO NA IMAGEM) */}
             <div className="business-model-grid">
                 <div className="bm-col">
                     <h3><Briefcase color="#00c6ff" /> Como atuamos</h3>
@@ -48,7 +48,7 @@ const BusinessContext = () => {
                         </div>
                     </div>
                 </div>
-                <div className="bm-col">
+                <div className="bm-col diferenciais">
                     <h3><Zap color="#fbbf24" /> Diferenciais</h3>
                     <div className="bm-list">
                         <div className="bm-item">
