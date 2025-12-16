@@ -36,7 +36,7 @@ const ToolsAndSupport = () => {
                     <h3>Despesas</h3>
                     <p>Registre suas despesas corporativas de forma rápida e fácil.</p>
                     <a
-                        href="https://expense.davosconsulting.com.br"
+                        href="https://app.pipefy.com/public/form/Ue_jvGNl"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="tool-btn"
@@ -54,7 +54,7 @@ const ToolsAndSupport = () => {
                     <h3>CRM</h3>
                     <p>Gerencie seus contatos e oportunidades de negócio.</p>
                     <a
-                        href="https://crm.davosconsulting.com.br"
+                        href="https://app.pipefy.com/pipes/303634815"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="tool-btn"
