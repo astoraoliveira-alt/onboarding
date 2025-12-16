@@ -337,7 +337,6 @@ const Hero = ({ employeeName, email }) => {
                         <div className="postit-wall">
                             {/* Card 1 - Coffee */}
                             <div className="tech-postit card-1 glass-panel" style={{ '--delay': '0s' }}>
-                                <div className="pin-icon">📍</div>
                                 <div className="postit-content">
                                     <span className="postit-emoji">☕</span>
                                     <h4>Café com Mentor</h4>
@@ -347,7 +346,6 @@ const Hero = ({ employeeName, email }) => {
 
                             {/* Card 2 - Tools */}
                             <div className="tech-postit card-2 glass-panel" style={{ '--delay': '1.5s' }}>
-                                <div className="pin-icon">🔧</div>
                                 <div className="postit-content">
                                     <span className="postit-emoji">💻</span>
                                     <h4>Setup Inicial</h4>
@@ -360,7 +358,6 @@ const Hero = ({ employeeName, email }) => {
 
                             {/* Card 3 - Culture */}
                             <div className="tech-postit card-3 glass-panel" style={{ '--delay': '0.8s' }}>
-                                <div className="pin-icon">🚀</div>
                                 <div className="postit-content">
                                     <span className="postit-emoji">✨</span>
                                     <h4>Cultura Davos</h4>
