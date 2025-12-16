@@ -193,212 +193,195 @@
     background: rgba(255, 255, 255, 0.1);
 }
 
-/* --- Right Column: Tracker Card --- */
+/* --- Right Column: Fun Post-it Wall --- */
 .hero-card-column {
     pointer-events: auto;
-    perspective: 1000px;
-}
-
-.onboarding-tracker-card {
-    background: rgba(15, 23, 42, 0.6);
-    /* Dark Glass */
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 24px;
-    padding: 25px;
-    width: 100%;
-    max-width: 380px;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    animation: floatCard 6s ease-in-out infinite;
     position: relative;
-    overflow: hidden;
-}
-
-/* Glow effect inside card */
-.onboarding-tracker-card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(112, 0, 255, 0.15) 0%, transparent 60%);
-    pointer-events: none;
-    z-index: 0;
-}
-
-@keyframes floatCard {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-.onboarding-tracker-card>* {
-    position: relative;
-    z-index: 1;
-}
-
-.card-header-hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.phase-badge {
-    background: linear-gradient(135deg, #7000ff, #a855f7);
-    padding: 4px 10px;
-    border-radius: 6px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: #fff;
-    box-shadow: 0 0 10px rgba(112, 0, 255, 0.4);
-}
-
-.phase-title {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.8);
-    font-weight: 500;
-}
-
-.progress-section {
-    margin-bottom: 25px;
-}
-
-.progress-labels {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.6);
-    margin-bottom: 8px;
-}
-
-.hero-progress-bar {
-    height: 6px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 3px;
-    overflow: hidden;
-}
-
-.hero-progress-fill {
-    height: 100%;
-    background: #00c6ff;
-    border-radius: 3px;
-    box-shadow: 0 0 10px #00c6ff;
-}
-
-.next-task-highlight {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 15px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 20px;
-    transition: background 0.2s;
-}
-
-.next-task-highlight:hover {
-    background: rgba(255, 255, 255, 0.08);
-}
-
-.task-icon-box {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    background: rgba(0, 0, 0, 0.3);
+    height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
+    perspective: 1000px;
 }
 
-.pulse-dot {
-    width: 12px;
-    height: 12px;
-    background: #ef4444;
-    /* Alert color for pending task */
-    border-radius: 50%;
-    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
-    animation: pulseRed 2s infinite;
+.postit-wall {
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
-@keyframes pulseRed {
-    0% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
-    }
+.tech-postit {
+    position: absolute;
+    background: rgba(15, 23, 42, 0.4);
+    /* Dark transparency */
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.3s ease;
+    animation: floatingWall 6s ease-in-out infinite;
+    animation-delay: var(--delay);
+}
 
-    70% {
-        transform: scale(1);
-        box-shadow: 0 0 0 6px rgba(239, 68, 68, 0);
-    }
+.tech-postit:hover {
+    transform: scale(1.05) rotate(0deg) !important;
+    /* Reset rotation on hover */
+    z-index: 10 !important;
+    background: rgba(15, 23, 42, 0.8);
+    border-color: rgba(255, 255, 255, 0.3);
+}
 
+/* Specific Positions & Rotations */
+.card-1 {
+    top: 10%;
+    left: 10%;
+    transform: rotate(-5deg);
+    border-top: 3px solid #fbbf24;
+    /* Amber Top */
+    z-index: 2;
+}
+
+.card-2 {
+    top: 40%;
+    right: 5%;
+    transform: rotate(3deg);
+    border-top: 3px solid #00c6ff;
+    /* Blue Top */
+    z-index: 3;
+    width: 220px;
+}
+
+.card-3 {
+    bottom: 10%;
+    left: 20%;
+    transform: rotate(-3deg);
+    border-top: 3px solid #7000ff;
+    /* Purple Top */
+    z-index: 1;
+}
+
+@keyframes floatingWall {
+
+    0%,
     100% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+        transform: translateY(0) rotate(var(--rot));
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(var(--rot));
     }
 }
 
-.task-details {
-    flex: 1;
+/* Set rotation CSS var dynamically or keep simple in keyframes. 
+   Simplification: just animating translate, keeping rotate static in transform 
+   is tricky without separate wrappers. 
+   
+   Better approach: Use the initial transform defined in class 
+   and animate margin-top or translate.
+*/
+.card-1 {
+    animation-name: float1;
+}
+
+.card-2 {
+    animation-name: float2;
+}
+
+.card-3 {
+    animation-name: float3;
+}
+
+@keyframes float1 {
+
+    0%,
+    100% {
+        transform: rotate(-5deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(-5deg) translateY(-12px);
+    }
+}
+
+@keyframes float2 {
+
+    0%,
+    100% {
+        transform: rotate(3deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(3deg) translateY(-15px);
+    }
+}
+
+@keyframes float3 {
+
+    0%,
+    100% {
+        transform: rotate(-3deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(-3deg) translateY(-8px);
+    }
+}
+
+.pin-icon {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+.postit-content {
+    text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    align-items: center;
+    gap: 8px;
 }
 
-.task-label {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.4);
-    letter-spacing: 0.05em;
+.postit-emoji {
+    font-size: 2rem;
+    margin-bottom: 5px;
+    display: block;
 }
 
-.task-name {
-    font-size: 0.9rem;
-    font-weight: 600;
+.tech-postit h4 {
+    font-size: 1rem;
     color: #fff;
-    line-height: 1.2;
+    margin: 0;
+    font-weight: 700;
 }
 
-.task-action-btn {
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 6px;
+.tech-postit p {
     font-size: 0.8rem;
-    cursor: pointer;
-    transition: all 0.2s;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.3;
+    margin: 0;
 }
 
-.task-action-btn:hover {
+.mini-action-btn {
+    margin-top: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    border-radius: 12px;
+    width: 100%;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.mini-action-btn:hover {
     background: #00c6ff;
     color: #000;
-}
-
-.daily-tip {
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-    padding-top: 15px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.daily-tip p {
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.5);
-    font-style: italic;
-    line-height: 1.4;
 }
 
 /* Scroll Indicator */

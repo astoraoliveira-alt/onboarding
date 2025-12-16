@@ -332,42 +332,40 @@ const Hero = ({ employeeName, email }) => {
                         </div>
                     </div>
 
-                    {/* Right Column: Actionable Tracker Card */}
+                    {/* Right Column: Fun Post-it Wall */}
                     <div className="hero-card-column animate-pop-in">
-                        <div className="onboarding-tracker-card glass-panel">
-                            <div className="card-header-hero">
-                                <div className="phase-badge">Fase 1</div>
-                                <span className="phase-title">Imersão Cultural</span>
-                            </div>
-
-                            <div className="progress-section">
-                                <div className="progress-labels">
-                                    <span>Progresso Inicial</span>
-                                    <span>15%</span>
-                                </div>
-                                <div className="hero-progress-bar">
-                                    <div className="hero-progress-fill" style={{ width: '15%' }}></div>
+                        <div className="postit-wall">
+                            {/* Card 1 - Coffee */}
+                            <div className="tech-postit card-1 glass-panel" style={{ '--delay': '0s' }}>
+                                <div className="pin-icon">📍</div>
+                                <div className="postit-content">
+                                    <span className="postit-emoji">☕</span>
+                                    <h4>Café com Mentor</h4>
+                                    <p>Agende um papo de 15min para se conectar.</p>
                                 </div>
                             </div>
 
-                            <div className="next-task-highlight">
-                                <div className="task-icon-box">
-                                    <div className="pulse-dot"></div>
+                            {/* Card 2 - Tools */}
+                            <div className="tech-postit card-2 glass-panel" style={{ '--delay': '1.5s' }}>
+                                <div className="pin-icon">🔧</div>
+                                <div className="postit-content">
+                                    <span className="postit-emoji">💻</span>
+                                    <h4>Setup Inicial</h4>
+                                    <p>Configure seu Outlook e Teams para começar.</p>
                                 </div>
-                                <div className="task-details">
-                                    <span className="task-label">Próxima Prioridade</span>
-                                    <span className="task-name">Configurar Acesso Microsoft</span>
-                                </div>
-                                <button className="task-action-btn" onClick={() => {
-                                    document.getElementById('microsoft-section').scrollIntoView({ behavior: 'smooth' });
-                                }}>
-                                    Ir
+                                <button className="mini-action-btn" onClick={() => document.getElementById('microsoft-section').scrollIntoView({ behavior: 'smooth' })}>
+                                    Ver Guia
                                 </button>
                             </div>
 
-                            <div className="daily-tip">
-                                <Info size={14} className="text-secondary" />
-                                <p>"Use o manual do Teams para configurar suas reuniões."</p>
+                            {/* Card 3 - Culture */}
+                            <div className="tech-postit card-3 glass-panel" style={{ '--delay': '0.8s' }}>
+                                <div className="pin-icon">🚀</div>
+                                <div className="postit-content">
+                                    <span className="postit-emoji">✨</span>
+                                    <h4>Cultura Davos</h4>
+                                    <p>Descubra o que nos torna únicos.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
