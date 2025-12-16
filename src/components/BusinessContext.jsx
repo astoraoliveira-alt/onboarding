@@ -15,17 +15,17 @@ const BusinessContext = () => {
                 <div className="mv-card">
                     <div className="mv-icon"><Target /></div>
                     <h3>Nossa Missão</h3>
-                    <p>Transformar a complexidade tecnológica em vantagem competitiva, entregando soluções que impulsionam o futuro dos nossos clientes.</p>
+                    <p>Apoiar verdadeiramente nossos clientes a executar e gerir seus principais desafios de transformação.</p>
                 </div>
                 <div className="mv-card">
                     <div className="mv-icon"><Eye /></div>
                     <h3>Nossa Visão</h3>
-                    <p>Ser referência global em consultoria de inovação, reconhecida pela excelência técnica e pelo impacto humano positivo.</p>
+                    <p>Transformar negócios resolvendo problemas reais, com foco em resultados mensuráveis. Atuamos com agilidade, clareza e disciplina, entregando valor de forma contínua e sustentável. Trabalhamos em parceria com nossos clientes, lado a lado, conectando tecnologia, processos e pessoas para impulsionar decisões melhores, execuções mais rápidas e impacto duradouro no negócio.</p>
                 </div>
                 <div className="mv-card">
                     <div className="mv-icon"><Heart /></div>
                     <h3>Nossos Princípios</h3>
-                    <p>Inovação pragmática, Transparência radical e Obsessão pelo sucesso do cliente.</p>
+                    <p>Atuamos com foco em resultados reais, usando agilidade com propósito para reduzir incertezas e acelerar decisões. Trabalhamos em parceria genuína com nossos clientes, compartilhando responsabilidades e assumindo a execução. Valorizamos simplicidade, disciplina e evolução contínua para gerar impacto consistente e sustentável no negócio.</p>
                 </div>
             </div>
 
