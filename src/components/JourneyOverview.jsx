@@ -2,14 +2,38 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import {
     ShieldCheck, Cloud, Smartphone, MessageSquare,
-    Palette, Wrench, ArrowRight
+    Palette, Wrench, ArrowRight, Globe, TrendingUp, Target
 } from 'lucide-react';
 import './JourneyOverview.css';
 
 const journeySteps = [
     {
-        id: 'security-section',
+        id: 'business-context-section',
         number: '01',
+        title: 'Contexto de Negócio',
+        description: 'Entenda nossa história, missão, modelo de negócio e onde queremos chegar.',
+        icon: Globe,
+        colorClass: 'color-security'
+    },
+    {
+        id: 'role-expectations-section',
+        number: '02',
+        title: 'Papel & Expectativas',
+        description: 'O que esperamos de você (30/60/90 dias) e como será sua avaliação.',
+        icon: Target,
+        colorClass: 'color-teams'
+    },
+    {
+        id: 'career-growth-section',
+        number: '03',
+        title: 'Carreira & Incentivos',
+        description: 'Trilhas de crescimento, benefícios e oportunidades de desenvolvimento.',
+        icon: TrendingUp,
+        colorClass: 'color-mobile'
+    },
+    {
+        id: 'security-section',
+        number: '04',
         title: 'Acesso & Segurança',
         description: 'Configure sua senha inicial e garanta o acesso seguro a todos os sistemas corporativos.',
         icon: ShieldCheck,
@@ -17,7 +41,7 @@ const journeySteps = [
     },
     {
         id: 'microsoft-section',
-        number: '02',
+        number: '05',
         title: 'Ecossistema Microsoft',
         description: 'Mergulhe nas ferramentas de produtividade: Outlook, OneDrive, Excel e muito mais.',
         icon: Cloud,
@@ -25,7 +49,7 @@ const journeySteps = [
     },
     {
         id: 'outlook-setup-section',
-        number: '03',
+        number: '06',
         title: 'Conectividade Mobile',
         description: 'Guia passo-a-passo para levar seu escritório no bolso com iOS e Android.',
         icon: Smartphone,
@@ -33,7 +57,7 @@ const journeySteps = [
     },
     {
         id: 'teams-manual-section',
-        number: '04',
+        number: '07',
         title: 'Comunicação e Cultura',
         description: 'Domine o Microsoft Teams e conheça nossas boas práticas de comunicação.',
         icon: MessageSquare,
@@ -41,7 +65,7 @@ const journeySteps = [
     },
     {
         id: 'downloads-section',
-        number: '05',
+        number: '08',
         title: 'Identidade Visual',
         description: 'Baixe wallpapers, fundos de videoconferência e assinaturas oficiais.',
         icon: Palette,
@@ -49,7 +73,7 @@ const journeySteps = [
     },
     {
         id: 'tools-section',
-        number: '06',
+        number: '09',
         title: 'Ferramentas & Suporte',
         description: 'Acesso rápido ao CRM, sistema de despesas, suporte TI e pagamentos.',
         icon: Wrench,

@@ -9,6 +9,9 @@ import OutlookSetup from './components/OutlookSetup';
 import ToolsAndSupport from './components/ToolsAndSupport';
 import DownloadsSection from './components/DownloadsSection';
 import JourneyOverview from './components/JourneyOverview';
+import BusinessContext from './components/BusinessContext';
+import RoleExpectations from './components/RoleExpectations';
+import CareerGrowth from './components/CareerGrowth';
 import Footer from './components/Footer';
 import './App.css';
 
@@ -63,6 +66,18 @@ function App() {
         <div className="container main-content">
           <Section>
             <JourneyOverview />
+          </Section>
+
+          <Section id="business-context-section">
+            <BusinessContext />
+          </Section>
+
+          <Section id="role-expectations-section">
+            <RoleExpectations />
+          </Section>
+
+          <Section id="career-growth-section">
+            <CareerGrowth />
           </Section>
 
           <Section id="security-section">
