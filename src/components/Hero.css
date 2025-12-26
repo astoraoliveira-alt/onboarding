@@ -422,3 +422,98 @@
         grid-template-columns: 1fr 1fr;
     }
 }
+
+/* Base Mobile optim request */
+@media (max-width: 768px) {
+    .hero-root {
+        min-height: auto;
+        padding-bottom: 60px;
+        align-items: flex-start;
+    }
+
+    .hero-ui-content {
+        padding-top: 20px;
+    }
+
+    .hero-grid {
+        gap: 40px;
+        padding-top: 80px;
+        /* Header space */
+    }
+
+    .hero-title {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .hero-description {
+        text-align: center;
+        font-size: 1rem;
+        margin: 0 auto 1.5rem;
+    }
+
+    .hero-actions {
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto 2rem;
+    }
+
+    .hero-btn-primary,
+    .hero-btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-stats-row {
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* Adjust Post-it wall for mobile */
+    .hero-card-column {
+        height: 300px;
+        transform: scale(0.8);
+        transform-origin: center top;
+        margin-top: -20px;
+    }
+
+    .tech-postit {
+        width: 160px;
+        padding: 15px;
+    }
+
+    .card-1 {
+        top: 0;
+        left: 50%;
+        margin-left: -80px;
+    }
+
+    .card-2 {
+        top: 50%;
+        right: auto;
+        left: 55%;
+    }
+
+    .card-3 {
+        bottom: auto;
+        top: 55%;
+        left: 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-card-column {
+        height: 280px;
+        transform: scale(0.7);
+    }
+
+    .scroll-indicator-wrapper {
+        bottom: 10px;
+    }
+}

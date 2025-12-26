@@ -87,3 +87,10 @@ main {
   border-color: var(--secondary);
   transform: translateY(-2px);
 }
+
+@media (max-width: 768px) {
+  .main-content {
+    gap: 60px;
+    padding-bottom: 60px;
+  }
+}

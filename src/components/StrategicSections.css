@@ -627,4 +627,52 @@
     .incentives-grid {
         grid-template-columns: 1fr;
     }
+
+    /* Career Step Mobile Optimizations */
+    .career-step {
+        gap: 15px;
+        align-items: flex-start;
+        /* Align top so line matches circle */
+    }
+
+    .step-circle {
+        width: 50px;
+        height: 50px;
+        font-size: 0.8rem;
+    }
+
+    .career-step:not(:last-child)::after {
+        left: 25px;
+        /* Center of 50px */
+        top: 50px;
+        /* Start after circle */
+        bottom: -20px;
+    }
+
+    .step-content {
+        padding: 15px;
+    }
+
+    .step-content h3 {
+        font-size: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .phase-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .phase-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.2rem;
+    }
+
+    .onboarding-phase-card {
+        padding: 20px;
+    }
 }

@@ -157,3 +157,26 @@
         transform: translateY(0);
     }
 }
+
+@media (max-width: 768px) {
+    .manual-container {
+        padding: 20px 0;
+    }
+
+    .manual-tabs {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .manual-tab {
+        flex: 1 1 45%;
+        /* 2 per row roughly */
+        justify-content: center;
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    .grid-instructions {
+        grid-template-columns: 1fr;
+    }
+}

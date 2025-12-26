@@ -15,7 +15,7 @@ const DynamicHeader = () => {
     // Mock Data
     const employee = {
         name: "Ana Silva",
-        role: "Senior Product Designer",
+        role: "MC - Senior Consultant",
         email: "ana.silva@davosbr.com",
         avatar: "https://i.pravatar.cc/150?u=a042581f4e29026704d", // Placeholder
         mentor: "Roberto Almeida",
@@ -59,7 +59,7 @@ const DynamicHeader = () => {
             <div className="header-bar">
                 {/* Company Logo */}
                 <div className="header-logo">
-                    <img src="/davos-logo-hero1.png" alt="Davos Consulting" />
+                    DAVOS
                 </div>
 
                 <div className="user-identity" onClick={toggleExpand}>
