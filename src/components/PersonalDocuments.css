@@ -1,0 +1,300 @@
+/* PersonalDocuments.css */
+
+.docs-header-info {
+    margin-bottom: 30px;
+}
+
+.docs-progress-container {
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.docs-progress-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.docs-progress-track {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.docs-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--secondary), var(--primary));
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Grid Layout */
+.docs-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.doc-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 20px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.doc-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.doc-card.completed {
+    border-left: 3px solid #22c55e;
+    background: linear-gradient(90deg, rgba(34, 197, 94, 0.05), transparent);
+}
+
+/* Icons */
+.doc-icon-wrapper {
+    flex-shrink: 0;
+}
+
+.doc-icon-placeholder {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+}
+
+.doc-status-icon.success {
+    color: #22c55e;
+}
+
+/* Info */
+.doc-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.doc-info h4 {
+    margin: 0 0 5px;
+    font-size: 1rem;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.required-badge {
+    font-size: 0.8rem;
+    color: #ef4444;
+}
+
+.doc-meta {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Actions */
+.doc-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hidden-input {
+    display: none;
+}
+
+.doc-upload-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.doc-upload-btn:hover:not(:disabled) {
+    background: #6000e0;
+    transform: translateY(-1px);
+}
+
+.doc-upload-btn:disabled {
+    opacity: 0.7;
+    cursor: wait;
+}
+
+.doc-action-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.doc-action-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.doc-action-btn.danger:hover {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.3);
+    color: #ef4444;
+}
+
+/* Spinner */
+.upload-spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Alert Box */
+.docs-alert {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    padding: 15px;
+    background: rgba(251, 191, 36, 0.1);
+    border: 1px solid rgba(251, 191, 36, 0.2);
+    border-radius: 8px;
+    color: #fbbf24;
+    align-items: flex-start;
+}
+
+.docs-alert p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .doc-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .doc-actions {
+        width: 100%;
+        justify-content: flex-end;
+        padding-top: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .doc-upload-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Multi File List */
+.multi-files-list {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.file-item-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.85rem;
+    color: var(--text-main);
+}
+
+.file-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 180px;
+}
+
+.file-actions-mini {
+    display: flex;
+    gap: 5px;
+}
+
+.mini-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.mini-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.mini-btn.danger:hover {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+}
+
+/* Adjustments for Upload Button when adding more */
+.doc-upload-btn.small-add-btn {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.doc-upload-btn.small-add-btn:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+@media (max-width: 600px) {
+    .file-name {
+        max-width: 120px;
+    }
+}

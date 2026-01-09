@@ -1,13 +1,14 @@
 import React from 'react';
-import { Headset, Receipt, Users, ArrowRight, Calendar } from 'lucide-react';
+import { Headset, Receipt, Users, ArrowRight, Calendar, Wrench } from 'lucide-react';
 import './SectionStyles.css';
 import './ToolsAndSupport.css';
 
 const ToolsAndSupport = () => {
     return (
-        <section className="section-container tools-support-section">
+        <section className="section-container tools-support-section" id="tools-support">
             <div className="section-header">
-                <h2>Ferramentas e Suporte</h2>
+                <Wrench size={32} className="section-icon" />
+                <h2>Ferramentas do Dia a Dia</h2>
             </div>
 
             <div className="tools-grid">

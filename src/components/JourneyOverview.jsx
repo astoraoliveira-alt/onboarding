@@ -2,7 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import {
     ShieldCheck, Cloud, Smartphone, MessageSquare,
-    Palette, Wrench, ArrowRight, Globe, TrendingUp, Target
+    Palette, Wrench, ArrowRight, Globe, TrendingUp, Target, FileText,
+    Compass, Users
 } from 'lucide-react';
 import './JourneyOverview.css';
 
@@ -16,68 +17,92 @@ const journeySteps = [
         colorClass: 'color-security'
     },
     {
-        id: 'role-expectations-section',
+        id: 'work-methodology-section',
         number: '02',
+        title: 'Forma de Trabalhar',
+        description: 'Autonomia, processos de decisão e nossos rituais do dia a dia.',
+        icon: Compass,
+        colorClass: 'color-design'
+    },
+    {
+        id: 'teams-manual-section',
+        number: '03',
+        title: 'Comunicação & Cultura',
+        description: 'Nossos valores praticados e o guia definitivo do Microsoft Teams.',
+        icon: MessageSquare,
+        colorClass: 'color-teams'
+    },
+    {
+        id: 'role-expectations-section',
+        number: '04',
         title: 'Papel & Expectativas',
-        description: 'O que esperamos de você (30/60/90 dias) e como será sua avaliação.',
+        description: 'Seu plano de 30/60/90 dias e critérios claros de avaliação.',
         icon: Target,
         colorClass: 'color-teams'
     },
     {
         id: 'career-growth-section',
-        number: '03',
+        number: '05',
         title: 'Carreira & Incentivos',
-        description: 'Trilhas de crescimento, benefícios e oportunidades de desenvolvimento.',
+        description: 'Trilhas de crescimento, mapa de desenvolvimento e benefícios.',
         icon: TrendingUp,
         colorClass: 'color-mobile'
     },
     {
+        id: 'people-structure-section',
+        number: '06',
+        title: 'Pessoas & Estrutura',
+        description: 'Quem é quem, lideranças e os pontos de contato de cada área.',
+        icon: Users,
+        colorClass: 'color-security'
+    },
+    {
         id: 'security-section',
-        number: '04',
+        number: '07',
         title: 'Acesso & Segurança',
-        description: 'Configure sua senha inicial e garanta o acesso seguro a todos os sistemas corporativos.',
+        description: 'Configuração de senha e acesso seguro aos sistemas.',
         icon: ShieldCheck,
         colorClass: 'color-security'
     },
     {
         id: 'microsoft-section',
-        number: '05',
+        number: '08',
         title: 'Ecossistema Microsoft',
-        description: 'Mergulhe nas ferramentas de produtividade: Outlook, OneDrive, Excel e muito mais.',
+        description: 'Outlook, OneDrive, Excel e ferramentas de produtividade.',
         icon: Cloud,
         colorClass: 'color-microsoft'
     },
     {
         id: 'outlook-setup-section',
-        number: '06',
+        number: '09',
         title: 'Conectividade Mobile',
-        description: 'Guia passo-a-passo para levar seu escritório no bolso com iOS e Android.',
+        description: 'Configure seu e-mail e apps corporativos no iOS ou Android.',
         icon: Smartphone,
         colorClass: 'color-mobile'
     },
     {
-        id: 'teams-manual-section',
-        number: '07',
-        title: 'Comunicação e Cultura',
-        description: 'Domine o Microsoft Teams e conheça nossas boas práticas de comunicação.',
-        icon: MessageSquare,
-        colorClass: 'color-teams'
+        id: 'tools-section',
+        number: '10',
+        title: 'Ferramentas do Dia a Dia',
+        description: 'CRM, despesas, pagamentos e suporte TI.',
+        icon: Wrench,
+        colorClass: 'color-tools'
     },
     {
         id: 'downloads-section',
-        number: '08',
+        number: '11',
         title: 'Identidade Visual',
-        description: 'Baixe wallpapers, fundos de videoconferência e assinaturas oficiais.',
+        description: 'Wallpapers, assinaturas e templates oficiais da marca.',
         icon: Palette,
         colorClass: 'color-design'
     },
     {
-        id: 'tools-section',
-        number: '09',
-        title: 'Ferramentas & Suporte',
-        description: 'Acesso rápido ao CRM, sistema de despesas, suporte TI e pagamentos.',
-        icon: Wrench,
-        colorClass: 'color-tools'
+        id: 'personal-documents-section',
+        number: '12',
+        title: 'Documentação Pessoal',
+        description: 'Upload seguro de documentos para o RH.',
+        icon: FileText,
+        colorClass: 'color-security'
     }
 ];
 

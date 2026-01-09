@@ -3,16 +3,19 @@ import { motion, useScroll, useSpring, useInView } from 'framer-motion';
 import { ArrowUp } from 'lucide-react';
 import DynamicHeader from './components/DynamicHeader';
 import Hero from './components/Hero';
-import SecuritySection from './components/SecuritySection';
-import MicrosoftIntro from './components/MicrosoftIntro';
-import TeamsManual from './components/TeamsManual';
-import OutlookSetup from './components/OutlookSetup';
-import ToolsAndSupport from './components/ToolsAndSupport';
-import DownloadsSection from './components/DownloadsSection';
-import JourneyOverview from './components/JourneyOverview';
 import BusinessContext from './components/BusinessContext';
+import WorkMethodology from './components/WorkMethodology'; // New
+import TeamsManual from './components/TeamsManual';
 import RoleExpectations from './components/RoleExpectations';
 import CareerGrowth from './components/CareerGrowth';
+import PeopleStructure from './components/PeopleStructure'; // New
+import SecuritySection from './components/SecuritySection';
+import MicrosoftIntro from './components/MicrosoftIntro';
+import OutlookSetup from './components/OutlookSetup';
+import ToolsAndSupport from './components/ToolsAndSupport';
+import DownloadsSection from './components/DownloadsSection'; // Moved just to be sure to match context
+import JourneyOverview from './components/JourneyOverview';
+import PersonalDocuments from './components/PersonalDocuments';
 import Footer from './components/Footer';
 import './App.css';
 
@@ -87,40 +90,64 @@ function App() {
             <JourneyOverview />
           </Section>
 
+          {/* 1. Contexto de Negócio */}
           <Section id="business-context-section" showBackBtn={true}>
             <BusinessContext />
           </Section>
 
-          <Section id="role-expectations-section" showBackBtn={true}>
-            <RoleExpectations />
+          {/* 2. Forma de Trabalhar */}
+          <Section id="work-methodology-section" showBackBtn={true}>
+            <WorkMethodology />
           </Section>
 
-          <Section id="career-growth-section" showBackBtn={true}>
-            <CareerGrowth />
-          </Section>
-
-          <Section id="security-section" showBackBtn={true}>
-            <SecuritySection />
-          </Section>
-
-          <Section id="microsoft-section" showBackBtn={true}>
-            <MicrosoftIntro />
-          </Section>
-
-          <Section id="outlook-setup-section" showBackBtn={true}>
-            <OutlookSetup />
-          </Section>
-
+          {/* 3. Comunicação & Cultura (Teams) */}
           <Section id="teams-manual-section" showBackBtn={true}>
             <TeamsManual />
           </Section>
 
+          {/* 4. Papel & Expectativas */}
+          <Section id="role-expectations-section" showBackBtn={true}>
+            <RoleExpectations />
+          </Section>
+
+          {/* 5. Carreira & Incentivos */}
+          <Section id="career-growth-section" showBackBtn={true}>
+            <CareerGrowth />
+          </Section>
+
+          {/* 6. Pessoas & Estrutura */}
+          <Section id="people-structure-section" showBackBtn={true}>
+            <PeopleStructure />
+          </Section>
+
+          {/* 7. Acesso & Segurança */}
+          <Section id="security-section" showBackBtn={true}>
+            <SecuritySection />
+          </Section>
+
+          {/* 8. Ecossistema Microsoft */}
+          <Section id="microsoft-section" showBackBtn={true}>
+            <MicrosoftIntro />
+          </Section>
+
+          {/* 9. Conectividade Mobile */}
+          <Section id="outlook-setup-section" showBackBtn={true}>
+            <OutlookSetup />
+          </Section>
+
+          {/* 10. Ferramentas do Dia a Dia */}
+          <Section id="tools-section" showBackBtn={true}>
+            <ToolsAndSupport />
+          </Section>
+
+          {/* 11. Identidade Visual */}
           <Section id="downloads-section" showBackBtn={true}>
             <DownloadsSection />
           </Section>
 
-          <Section id="tools-section" showBackBtn={true}>
-            <ToolsAndSupport />
+          {/* 12. Documentação Pessoal */}
+          <Section id="personal-documents-section" showBackBtn={true}>
+            <PersonalDocuments />
           </Section>
         </div>
       </main>
